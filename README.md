@@ -1,29 +1,32 @@
-# README #
+GuessCelebrity
+========================
 
-This README would normally document whatever steps are necessary to get your application up and running.
+[![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat
+)](https://developer.apple.com/iphone/index.action)
+[![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat
+)](https://developer.apple.com/swift)
+[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat
+)](http://mit-license.org)
+[![Issues](https://img.shields.io/github/issues/dekatotoro/SlideMenuControllerSwift.svg?style=flat
+)](https://github.com/dekatotoro/SlideMenuControllerSwift/issues?state=open)
 
-### What is this repository for? ###
+![sample](Screenshots/img1.png)
+![sample](Screenshots/img2.png)
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+##Installation
 
-### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
 
-### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
+## Contributing
 
-### Who do I talk to? ###
+Forks, patches and other feedback are welcome.
 
-* Repo owner or admin
-* Other community or team contact
+## Creator
+
+[Muzahidul Islam](http://mmsaddam.github.io/) 
+[Blog](http://mmsaddam.github.io/)
+
+## License
+
+SlideMenuControllerSwift is available under the MIT license. See the LICENSE file for more info.
