@@ -1,4 +1,4 @@
-GuessCelebrity
+##GuessCelebrity
 ========================
 
 [![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat
