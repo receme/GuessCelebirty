@@ -3,8 +3,6 @@
 
 [![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat
 )](https://developer.apple.com/iphone/index.action)
-[![Language](Objective-C
-)](https://developer.apple.com/swift)
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat
 )](http://mit-license.org)
 [![Issues](https://img.shields.io/github/issues/dekatotoro/SlideMenuControllerSwift.svg?style=flat
@@ -13,6 +11,10 @@
 ![sample](screenshots/img2.png)
 ![sample](screenshots/img1.png)
 
+
+##Language
+
+Objective-C
 
 ##Installation
 
