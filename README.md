@@ -5,8 +5,6 @@
 )](https://developer.apple.com/iphone/index.action)
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat
 )](http://mit-license.org)
-[![Issues](https://img.shields.io/github/issues/dekatotoro/SlideMenuControllerSwift.svg?style=flat
-)](https://github.com/dekatotoro/SlideMenuControllerSwift/issues?state=open)
 
 ![sample](screenshots/img2.png)
 ![sample](screenshots/img1.png)
@@ -16,7 +14,9 @@
 
 Objective-C
 
-##Installation
+##How to play
+
+Its very easy to play.Start button leads to you the main game board. It is 5x5 grid. You have maximum 6 chance to open the grid. Base on this you have to guess the celebrity name and co-ordinate the character of the celebrity name. Its very simple and funny.
 
 
 
