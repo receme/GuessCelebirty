@@ -14,12 +14,17 @@
 
 Objective-C
 
+##Tools
+Xcode 6.3, Cocoa Touch
+
+##Requirement
+iOS 7
+Only for iPhone, iPod
+iPad comming soon...
+
 ##How to play
 
 Its very easy to play.Start button leads to you the main game board. It is 5x5 grid. You have maximum 6 chance to open the grid. Base on this you have to guess the celebrity name and co-ordinate the character of the celebrity name. Its very simple and funny.
-
-
-
 
 ## Contributing
 
