@@ -14,9 +14,9 @@
 		41432C3E1A72C9C600F9F230 /* NUER.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41432C371A72C9C600F9F230 /* NUER.jpg */; };
 		41432C3F1A72C9C600F9F230 /* OZIL.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41432C381A72C9C600F9F230 /* OZIL.jpg */; };
 		41432C411A72C9C600F9F230 /* XAVI.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41432C3A1A72C9C600F9F230 /* XAVI.jpg */; };
-		41DED33F1CC7102B008D42C5 /* background_music.wav in Resources */ = {isa = PBXBuildFile; fileRef = 41DED33E1CC7102B008D42C5 /* background_music.wav */; };
 		41FBDCBA1A6C1BDA00588B51 /* share1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FBDCB91A6C1BDA00588B51 /* share1.png */; };
 		41FBDCBE1A6C26C900588B51 /* share2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FBDCBD1A6C26C900588B51 /* share2@2x.png */; };
+		53A957841CC805D90013EE51 /* background_music2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 53A957831CC805D90013EE51 /* background_music2.wav */; };
 		7E3DE3441A5072290034B85A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3DE3431A5072290034B85A /* main.m */; };
 		7E3DE3471A5072290034B85A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3DE3461A5072290034B85A /* AppDelegate.m */; };
 		7E3DE34A1A5072290034B85A /* GamePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3DE3491A5072290034B85A /* GamePlayViewController.m */; };
@@ -60,9 +60,9 @@
 		41432C371A72C9C600F9F230 /* NUER.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NUER.jpg; sourceTree = "<group>"; };
 		41432C381A72C9C600F9F230 /* OZIL.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = OZIL.jpg; sourceTree = "<group>"; };
 		41432C3A1A72C9C600F9F230 /* XAVI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = XAVI.jpg; sourceTree = "<group>"; };
-		41DED33E1CC7102B008D42C5 /* background_music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = background_music.wav; sourceTree = "<group>"; };
 		41FBDCB91A6C1BDA00588B51 /* share1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share1.png; sourceTree = "<group>"; };
 		41FBDCBD1A6C26C900588B51 /* share2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share2@2x.png"; sourceTree = "<group>"; };
+		53A957831CC805D90013EE51 /* background_music2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = background_music2.wav; sourceTree = "<group>"; };
 		7E3DE33E1A5072290034B85A /* GuessCelebrity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessCelebrity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3DE3421A5072290034B85A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E3DE3431A5072290034B85A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		7E3DE3411A5072290034B85A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				41DED33E1CC7102B008D42C5 /* background_music.wav */,
+				53A957831CC805D90013EE51 /* background_music2.wav */,
 				7E55830F1A57015B0091D011 /* tap-sound.mp3 */,
 				7E9A91581A5EE70900C2C4A0 /* Celebrity */,
 				7E5583081A56F1730091D011 /* Img */,
@@ -313,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A957841CC805D90013EE51 /* background_music2.wav in Resources */,
 				41432C3C1A72C9C600F9F230 /* KAKA.jpg in Resources */,
 				7E5583101A57015B0091D011 /* tap-sound.mp3 in Resources */,
 				7E5293A11A6825DB00433133 /* DEMARI.jpg in Resources */,
@@ -325,7 +326,6 @@
 				41098E4F1A73EB5600F944B0 /* ROLANDO.jpg in Resources */,
 				41432C3E1A72C9C600F9F230 /* NUER.jpg in Resources */,
 				7E87A3231A641C1C00056128 /* grid.jpg in Resources */,
-				41DED33F1CC7102B008D42C5 /* background_music.wav in Resources */,
 				7E9A916D1A5EF14A00C2C4A0 /* ROONEY.jpg in Resources */,
 				41FBDCBE1A6C26C900588B51 /* share2@2x.png in Resources */,
 				7E3DE34D1A5072290034B85A /* Main.storyboard in Resources */,
