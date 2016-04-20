@@ -29,9 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-      
+  
     self.textLabel.numberOfLines = self.guessCelebrityLabel.numberOfLines =0;
     self.textLabel.text = @"Tap the blocks to reveal the image";
    // self.guessCelebrityLabel.text =@"Gues The\nCelebrity";
