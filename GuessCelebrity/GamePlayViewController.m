@@ -198,13 +198,13 @@ typedef void (^Handler)(BOOL isCompleted);
     for (int j = 0; j<6; j++) {
       
       UILabel *tempLabel = [[UILabel alloc]initWithFrame:CGRectMake(xPos+(j*kGridSize)+(j*5), self.imageGrid.frame.size.height+80+70+(i*kGridSize+(i*5)), kGridSize, kGridSize)];
-      tempLabel.textColor = [UIColor whiteColor];
+      tempLabel.textColor = [UIColor blackColor];
       tempLabel.userInteractionEnabled = YES;
       tempLabel.font = [UIFont systemFontOfSize:20];
       tempLabel.textAlignment = NSTextAlignmentCenter;
       tempLabel.layer.masksToBounds = YES;
       tempLabel.layer.cornerRadius = kGridSize/2;
-      tempLabel.backgroundColor = [UIColor blueColor];
+      tempLabel.backgroundColor = [UIColor colorWithRed:237.0f/255.0f green:201.0f/255.0f blue:68.0f/255.0f alpha:1];
       tempLabel.text = [NSString stringWithFormat:@"%c",[puzzleString characterAtIndex:count]];
       tempLabel.tag = [[NSString stringWithFormat:@"%d%d",i,j]intValue];
       [self.frameDic setObject:[NSValue valueWithCGRect:tempLabel.frame] forKey:[NSString stringWithFormat:@"%d",(int)tempLabel.tag]];
@@ -372,11 +372,11 @@ typedef void (^Handler)(BOOL isCompleted);
       
       [UIView animateKeyframesWithDuration:0.1 delay:0.3 options:UIViewKeyframeAnimationOptionAutoreverse animations:^{
         tapLabel.alpha = 0;
-        tapLabel.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
+        tapLabel.backgroundColor = [UIColor redColor];
         
       } completion:^(BOOL finished) {
         tapLabel.alpha = 1;
-        tapLabel.backgroundColor = [UIColor blueColor];
+        tapLabel.backgroundColor = [UIColor colorWithRed:237.0f/255.0f green:201.0f/255.0f blue:68.0f/255.0f alpha:1];
       }];
       if (idx == self.celebrityName.length - 1) {
         handler(NO);

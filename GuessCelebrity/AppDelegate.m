@@ -63,7 +63,7 @@
   [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
   [[AVAudioSession sharedInstance]setActive:YES error:nil];
   
-  NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"background_music" ofType: @"wav"];
+  NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"background_music2" ofType: @"wav"];
   NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:soundFilePath ];
   if (!self.audioPlayer) {
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
