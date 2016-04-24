@@ -1,5 +1,6 @@
 # Xcode
 .DS_Store
+GuessCelebrity.xcodeproj/project.xcworkspace/xcuserdata/iMuzahid.xcuserdatad/UserInterfaceState.xcuserstate
 build/
 *.pbxuser
 !default.pbxuser

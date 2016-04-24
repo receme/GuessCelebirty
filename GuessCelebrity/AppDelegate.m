@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SharedGameController.h"
+#import "Global.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
@@ -20,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
     [[UIApplication sharedApplication]setStatusBarHidden:YES];
+  
     
     return YES;
 }
@@ -41,9 +43,22 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-  [self playBackgroundMusic];
+  if ([[NSUserDefaults standardUserDefaults]boolForKey:k_Background_Sound]) {
+  
+    [self playBackgroundMusic];
+
+    
+  }else{
+    
+    [self pauseBackgroundMusic];
+
+  }
+
 }
 
+- (void)handleBackgorundSound:(NSNotification *) notification{
+  
+}
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }

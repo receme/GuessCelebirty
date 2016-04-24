@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *guessCelebrityLabel;
 @property (strong, nonatomic) NSTimer *animationTimer;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIButton *backGroundMusicBtn;
+@property (weak, nonatomic) IBOutlet UIButton *reavealBtn;
 
 @end
 
@@ -30,11 +32,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
+    self.view.backgroundColor = kBackgroundColor;
     self.textLabel.numberOfLines = self.guessCelebrityLabel.numberOfLines =0;
     self.textLabel.text = @"Tap the blocks to reveal the image";
    // self.guessCelebrityLabel.text =@"Gues The\nCelebrity";
   
+  
     [self makeBtnRound];
+  
+  [self changeBackgroundMusicBtnTitle];
+}
+
+- (void)changeBackgroundMusicBtnTitle{
+  if ([[NSUserDefaults standardUserDefaults]boolForKey:k_Background_Sound]) {
+    
+    [self.backGroundMusicBtn setTitle:@"Background Music Off" forState:UIControlStateNormal];
+  }else{
+    [self.backGroundMusicBtn setTitle:@"Background Music On" forState:UIControlStateNormal];
+  }
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -76,6 +92,37 @@
 }
 
 - (IBAction)moreApsBtnAction:(id)sender {
+  
+}
+
+- (IBAction)backgroundSoundOffbtnAction:(id)sender {
+  
+  if ([[NSUserDefaults standardUserDefaults]boolForKey:k_Background_Sound]) {
+    [[NSUserDefaults standardUserDefaults]setBool:NO forKey:k_Background_Sound];
+    [self changeBackgroundMusicBtnTitle];
+    [appdelegate pauseBackgroundMusic];
+    
+  }else{
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:k_Background_Sound];
+    [self changeBackgroundMusicBtnTitle];
+    [appdelegate playBackgroundMusic];
+
+  }
+  
+  
+}
+
+- (IBAction)tapSoundOff:(id)sender {
+  
+  if ([[NSUserDefaults standardUserDefaults]boolForKey:k_Reveal_Sound]) {
+    [[NSUserDefaults standardUserDefaults]setBool:NO forKey:k_Reveal_Sound];
+    [self.reavealBtn setTitle:@"Reveal Sound On" forState:UIControlStateNormal];
+  }else{
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:k_Reveal_Sound];
+    [self.reavealBtn setTitle:@"Reveal Sound Off" forState:UIControlStateNormal];
+  }
+  
+  //[appdelegate playBackgroundMusic];
 }
 
 -(void)animatedButton:(NSTimer *)timer{

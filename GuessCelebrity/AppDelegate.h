@@ -15,5 +15,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+-(void)pauseBackgroundMusic;
+-(void)playBackgroundMusic;
 @end
 

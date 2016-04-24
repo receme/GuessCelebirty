@@ -49,6 +49,7 @@ typedef void (^Handler)(BOOL isCompleted);
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  self.view.backgroundColor = kBackgroundColor;
   self.viewAfterCompleteLavel.alpha = 0;
   self.viewAfterCompleteLavel.center = CGPointMake(self.view.frame.size.width/2, -self.view.frame.size.height/2);
   
@@ -494,7 +495,10 @@ typedef void (^Handler)(BOOL isCompleted);
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
     self.audioPlayer.numberOfLoops = 0;
   }
-  [self.audioPlayer play];
+  if ([[NSUserDefaults standardUserDefaults]boolForKey:k_Reveal_Sound]) {
+    [self.audioPlayer play];
+  }
+  
 }
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
