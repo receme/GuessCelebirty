@@ -7,16 +7,38 @@
 //
 
 #import "LabelViewController.h"
+#import "GameController.h"
+#import "Global.h"
+
+
+
 
 @interface LabelViewController ()
-
 @end
 
 @implementation LabelViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  self.navigationController.navigationBarHidden = YES;
+  
+  for (UIButton *obj in self.view.subviews) {
+    if (obj.tag>= 0 && obj.tag<=8) {
+      obj.layer.cornerRadius = 8;
+    }
+  }
+  
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+  sharedController.gameStatus = YES;
+ // [self performSegueWithIdentifier:@"PUSH_GAME" sender:self];
+}
+
+- (IBAction)buttonActions:(id)sender {
+  
+  sharedController.gameStatus = YES;
+  [self performSegueWithIdentifier:@"PUSH_GAME" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {

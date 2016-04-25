@@ -7,8 +7,9 @@
 //
 
 #import "InitialViewController.h"
-#import "SharedGameController.h"
+#import "GameController.h"
 #import "Global.h"
+#import "LabelViewController.h"
 
 
 @interface InitialViewController ()
@@ -88,7 +89,11 @@
 - (IBAction)playBtnAction:(id)sender {
     sharedController.gameStatus = YES;
     [_animationTimer invalidate];
-    [self performSegueWithIdentifier:@"PUSH_GAME" sender:self];
+  [self performSegueWithIdentifier:@"PUSH" sender:self];
+//  UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//  LabelViewController *obj = [main instantiateViewControllerWithIdentifier:@"LABEL_VC"];
+//  [self.navigationController pushViewController:obj animated:YES];
+  //  [self performSegueWithIdentifier:@"LABEL_VC" sender:self];
 }
 
 - (IBAction)moreApsBtnAction:(id)sender {

@@ -8,13 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SharedGameController : NSObject
+@interface GameController : NSObject
 @property (assign) BOOL gameStatus;  // yes play no restart
 @property (assign) BOOL gameOnProgress;
 @property (assign) NSUInteger numberOfLabel;
 @property (assign) NSUInteger numberOfCoin;
 @property (nonatomic, strong) NSString *celebrityName;
-@property (strong) NSArray *celebrityAry;
+@property (strong) NSMutableArray *celebrityAry;
+@property (strong) NSArray *celebrities;
+
+
 
 +(instancetype)sharedController;
+-(void)reset;
 @end

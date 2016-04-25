@@ -9,7 +9,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "GamePlayViewController.h"
 #import "PrepareString.h"
-#import "SharedGameController.h"
+#import "GameController.h"
 #import "Global.h"
 
 #define k_CharSet @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -112,11 +112,12 @@ typedef void (^Handler)(BOOL isCompleted);
 
 -(void)startPlay{
   
-  if (sharedController.numberOfLabel-1 == (sharedController.celebrityAry.count)) {
+  if ( sharedController.celebrityAry.count == 0) {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Congratulation!!" message:@"You Have Completed All Level" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
       sharedController.numberOfLabel = 1;
       sharedController.gameOnProgress = NO;
+      [sharedController reset];
       [self.navigationController popViewControllerAnimated:YES];
       
     }];
@@ -127,10 +128,12 @@ typedef void (^Handler)(BOOL isCompleted);
   }else{
     self.numbeReveal = K_REVEAL_NUM;
     self.revealLabel.text = [NSString stringWithFormat:@"%zd Reveals left",self.numbeReveal];
-    
     self.levelCompleted = NO;
     
-    self.celebrityName = [sharedController.celebrityAry objectAtIndex:sharedController.numberOfLabel-1];
+    
+    NSUInteger index = [self getRandomNumberBetween:0 to:sharedController.celebrityAry.count-1];
+  
+    self.celebrityName = [sharedController.celebrityAry objectAtIndex:index];
     self.titleLabel.text = [NSString stringWithFormat:@"LEVEL %zd",sharedController.numberOfLabel];
     sharedController.gameOnProgress = YES;
     
@@ -150,7 +153,10 @@ typedef void (^Handler)(BOOL isCompleted);
   
 }
 
-
+-(NSUInteger)getRandomNumberBetween:(NSUInteger)from to:(NSUInteger)to {
+  
+  return (NSUInteger)from + arc4random() % (to-from+1);
+}
 
 -(void)reset{
   
@@ -359,6 +365,9 @@ typedef void (^Handler)(BOOL isCompleted);
   if ([resultString isEqualToString:self.celebrityName]) {
     NSLog(@"win...");
     self.levelCompleted = YES;
+    if ([sharedController.celebrityAry containsObject:self.celebrityName]) {
+      [sharedController.celebrityAry removeObject:self.celebrityName];
+    }
     handler(YES);
     
   }else{

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SharedGameController.h"
+#import "GameController.h"
 #import "Global.h"
 
 @interface AppDelegate ()

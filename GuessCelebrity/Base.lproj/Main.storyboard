@@ -15,12 +15,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="dRq-zF-1tZ" kind="relationship" relationship="rootViewController" id="ZWH-yL-oJM"/>
+                        <segue destination="dRq-zF-1tZ" kind="relationship" relationship="rootViewController" id="B1C-Gr-weH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAN-cb-JuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-812.5" y="-338.5"/>
+            <point key="canvasLocation" x="-1008.5" y="-263.5"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="VUL-1h-ThD">
@@ -120,12 +120,12 @@
                         <outlet property="restartBtn" destination="2uC-y3-Bxi" id="FtK-0z-HGZ"/>
                         <outlet property="textLabel" destination="2hx-oH-rW3" id="eyV-DX-oLb"/>
                         <outlet property="titleLabel" destination="M4D-hh-Q1k" id="kS5-uy-J8Q"/>
-                        <segue destination="BYZ-38-t0r" kind="push" identifier="PUSH_GAME" id="ngX-KQ-kcO"/>
+                        <segue destination="K09-Mq-jxj" kind="push" identifier="PUSH" id="9Iq-wu-bms"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oj1-v4-JQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-396.5" y="-338.5"/>
+            <point key="canvasLocation" x="-559.5" y="-263.5"/>
         </scene>
         <!--Game Play View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -143,7 +143,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gqM-3L-Oa5">
-                                <rect key="frame" x="340" y="369" width="30" height="30"/>
+                                <rect key="frame" x="339.99999977648258" y="369" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="AddressViewReload.png">
@@ -154,7 +154,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xp2-b8-ihs">
-                                <rect key="frame" x="340" y="407" width="30" height="30"/>
+                                <rect key="frame" x="339.99999977648258" y="407" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -267,11 +267,115 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.5" y="-338.5"/>
+            <point key="canvasLocation" x="460.5" y="-352.5"/>
+        </scene>
+        <!--Label View Controller-->
+        <scene sceneID="rvQ-Ge-ota">
+            <objects>
+                <viewController storyboardIdentifier="LABEL_VC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K09-Mq-jxj" customClass="LabelViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qvY-fT-eEl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Zl-GO-mDQ">
+                                <rect key="frame" x="20" y="60" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="lock.png"/>
+                                <connections>
+                                    <action selector="buttonActions:" destination="K09-Mq-jxj" eventType="touchUpInside" id="MDq-6j-k6L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Zo-vX-uev">
+                                <rect key="frame" x="137" y="60" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="lock.png"/>
+                                <connections>
+                                    <action selector="buttonActions:" destination="K09-Mq-jxj" eventType="touchUpInside" id="cbt-x1-wj8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kXR-bQ-mDb">
+                                <rect key="frame" x="255" y="60" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="lock.png"/>
+                                <connections>
+                                    <action selector="buttonActions:" destination="K09-Mq-jxj" eventType="touchUpInside" id="Y8c-Bz-RiX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RjU-Wc-PDo">
+                                <rect key="frame" x="20" y="298" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="lock.png"/>
+                                <connections>
+                                    <action selector="buttonActions:" destination="K09-Mq-jxj" eventType="touchUpInside" id="MY3-yW-kVa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dBf-3Q-FtB">
+                                <rect key="frame" x="137" y="298" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="lock.png"/>
+                                <connections>
+                                    <action selector="buttonActions:" destination="K09-Mq-jxj" eventType="touchUpInside" id="9DG-mg-NqU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="crK-Uv-vLt">
+                                <rect key="frame" x="20" y="178" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="lock.png"/>
+                                <connections>
+                                    <action selector="buttonActions:" destination="K09-Mq-jxj" eventType="touchUpInside" id="mEZ-ep-GLQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oGp-B0-hIZ">
+                                <rect key="frame" x="137" y="178" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="lock.png"/>
+                                <connections>
+                                    <action selector="buttonActions:" destination="K09-Mq-jxj" eventType="touchUpInside" id="HKF-YJ-vjE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B7n-aD-Vs7">
+                                <rect key="frame" x="255" y="178" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="lock.png"/>
+                                <connections>
+                                    <action selector="buttonActions:" destination="K09-Mq-jxj" eventType="touchUpInside" id="uXy-EZ-qGT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5CN-BA-thG">
+                                <rect key="frame" x="255" y="298" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="lock.png"/>
+                                <connections>
+                                    <action selector="buttonActions:" destination="K09-Mq-jxj" eventType="touchUpInside" id="l8N-N7-5gP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89019607840000003" green="0.27450980390000002" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eeR-dn-5bs"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="PUSH_GAME" id="BtB-zI-sQJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yYu-X2-VzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65.5" y="-246.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="AddressViewReload.png" width="13" height="15"/>
+        <image name="lock.png" width="100" height="138"/>
         <image name="share2.png" width="52" height="52"/>
     </resources>
 </document>

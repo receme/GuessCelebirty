@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Muzahid. All rights reserved.
 //
 
-#import "SharedGameController.h"
+#import "GameController.h"
 
-@implementation SharedGameController
+@implementation GameController
 
 +(instancetype)sharedController{
-     static SharedGameController *sharedController = nil;
+     static GameController *sharedController = nil;
      static dispatch_once_t onceToken;
     if (!sharedController) {
         dispatch_once(&onceToken, ^{
-            sharedController = [[SharedGameController alloc]init];
+            sharedController = [[GameController alloc]init];
             
         });
     }
@@ -27,10 +27,16 @@
     if (self) {
         self.numberOfLabel = 1;
         NSString *resourcePath = [[NSBundle mainBundle]pathForResource:@"Celebrity" ofType:@"plist"];
-        self.celebrityAry =  [[NSArray alloc]initWithContentsOfFile:resourcePath];
+      self.celebrities = [[NSArray alloc]initWithContentsOfFile:resourcePath];
+      
+      self.celebrityAry = [NSMutableArray arrayWithArray:self.celebrities];
 
     }
     return self;
+}
+
+-(void)reset{
+  self.celebrityAry = [NSMutableArray arrayWithArray:self.celebrities];
 }
 @end
 

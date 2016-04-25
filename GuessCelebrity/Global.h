@@ -21,7 +21,7 @@
 #define kFifthLocation CGPointMake(kFourthLocation.x+kGridSize+5,kYpos)
 #define kSixthLocation CGPointMake(kFifthLocation.x+kGridSize+5,kYpos)
 
-#define sharedController [SharedGameController sharedController]
+#define sharedController [GameController sharedController]
 
 #define appdelegate (AppDelegate*)[[UIApplication sharedApplication]delegate]
 
