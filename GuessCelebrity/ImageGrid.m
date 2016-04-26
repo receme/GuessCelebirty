@@ -35,14 +35,8 @@
     for (int i = 0; i<5; i++){
         for (int j= 0; j<5; j++) {
             UIImageView *view = [[UIImageView alloc]initWithFrame:CGRectMake((j*dimensoin),(i*dimensoin), dimensoin, dimensoin)];
-          //  view.backgroundColor = [UIColor blueColor];
             view.image = [UIImage imageNamed:@"grid.jpg"];
             view.userInteractionEnabled = YES;
-            //[UIColor colorWithRed:1 green:0.1687 blue:0.388 alpha:1];
-            //[UIColor darkGrayColor];
-            
-          //  view.layer.masksToBounds = YES;
-            //view.layer.cornerRadius = 4.0;
             view.tag = tag;
             tag++;
             [self addSubview:view];

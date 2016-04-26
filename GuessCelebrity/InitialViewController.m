@@ -34,7 +34,7 @@
     [super viewDidLoad];
   
     self.view.backgroundColor = kBackgroundColor;
-    self.textLabel.numberOfLines = self.guessCelebrityLabel.numberOfLines =0;
+    self.textLabel.numberOfLines = self.guessCelebrityLabel.numberOfLines = 0;
     self.textLabel.text = @"Tap the blocks to reveal the image";
    // self.guessCelebrityLabel.text =@"Gues The\nCelebrity";
   
@@ -42,6 +42,13 @@
     [self makeBtnRound];
   
   [self changeBackgroundMusicBtnTitle];
+  
+ // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
+}
+
+-(void)saveCurrentState{
+  printf("save state");
+  [sharedController saveCelebrities];
 }
 
 - (void)changeBackgroundMusicBtnTitle{
@@ -56,11 +63,11 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     
-    if (sharedController.gameOnProgress) {
-        self.restartBtn.alpha = 1;
-    }else{
-        self.restartBtn.alpha = 0;
-    }
+//    if (sharedController.gameOnProgress) {
+//        self.restartBtn.alpha = 1;
+//    }else{
+//        self.restartBtn.alpha = 0;
+//    }
      self.titleLabel.text = [NSString stringWithFormat:@"LEVEL %zd",sharedController.numberOfLabel];
 
      self.animationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(animatedButton:) userInfo:nil repeats:YES];

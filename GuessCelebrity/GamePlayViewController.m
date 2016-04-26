@@ -45,6 +45,7 @@ typedef void (^Handler)(BOOL isCompleted);
 @end
 
 @implementation GamePlayViewController
+@synthesize delegate;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -243,7 +244,8 @@ typedef void (^Handler)(BOOL isCompleted);
     [self.audioPlayer play];
     [self.imageGrid reload];
     [self startPlay];
-    
+    // post label completed notification
+    [[NSNotificationCenter defaultCenter]postNotificationName:k_Label_Completed object:nil];
   }];
 }
 
@@ -364,6 +366,7 @@ typedef void (^Handler)(BOOL isCompleted);
   
   if ([resultString isEqualToString:self.celebrityName]) {
     NSLog(@"win...");
+    
     self.levelCompleted = YES;
     if ([sharedController.celebrityAry containsObject:self.celebrityName]) {
       [sharedController.celebrityAry removeObject:self.celebrityName];

@@ -22,12 +22,38 @@
     [super viewDidLoad];
   self.navigationController.navigationBarHidden = YES;
   
-  for (UIButton *obj in self.view.subviews) {
-    if (obj.tag>= 0 && obj.tag<=8) {
-      obj.layer.cornerRadius = 8;
+  for (UIView *obj in self.view.subviews) {
+    if ([obj isKindOfClass:[UIButton class]]) {
+      if (obj.tag>= 0 && obj.tag<=8) {
+        obj.layer.cornerRadius = 8;
+      }
     }
+    
   }
   
+  [self updateUIAfterLableCompleted];
+  
+  [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(newLabelUnlock:) name:k_Label_Completed object:nil];
+  
+}
+
+-(void)newLabelUnlock:(NSNotification *)notification{
+  [self updateUIAfterLableCompleted];
+
+}
+
+-(void)updateUIAfterLableCompleted{
+  NSUInteger unlockLable = sharedController.numberOfLabel / k_Unlock_Interval;
+  for (UIView *obj in self.view.subviews) {
+    if ([obj isKindOfClass:[UIButton class]]) {
+      if (obj.tag>= 0 && obj.tag<=unlockLable) {
+        [(UIButton *)obj setBackgroundImage:[UIImage imageNamed:@"unlock"] forState:UIControlStateNormal];
+      }else{
+        [(UIButton *)obj setBackgroundImage:[UIImage imageNamed:@"lock"] forState:UIControlStateNormal];
+      }
+    }
+    
+  }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -37,13 +63,26 @@
 
 - (IBAction)buttonActions:(id)sender {
   
-  sharedController.gameStatus = YES;
-  [self performSegueWithIdentifier:@"PUSH_GAME" sender:self];
+  UIButton *obj = (UIButton *)sender;
+  
+  NSUInteger unlockLable = sharedController.numberOfLabel / k_Unlock_Interval;
+  
+  
+  if ( obj.tag<=unlockLable) {
+    sharedController.gameStatus = YES;
+    [self performSegueWithIdentifier:@"PUSH_GAME" sender:self];
+  }else{
+    printf("unlock");
+  }
+  
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)backAction:(id)sender {
+  [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*
@@ -55,5 +94,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(void)dealloc{
+  [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
 @end

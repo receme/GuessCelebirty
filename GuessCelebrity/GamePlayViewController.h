@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol GamePlayDelegate <NSObject>
+
+@optional
+-(void)labelCompleted:(NSUInteger) label;
+
+@end
+
 @interface GamePlayViewController : UIViewController
-
-
+@property (weak) id<GamePlayDelegate> delegate;
 @end
 

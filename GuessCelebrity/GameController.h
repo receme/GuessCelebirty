@@ -19,6 +19,7 @@
 
 
 
-+(instancetype)sharedController;
--(void)reset;
++ (instancetype)sharedController;
+- (void)reset;
+- (void)saveCelebrities;
 @end

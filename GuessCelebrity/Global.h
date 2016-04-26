@@ -26,4 +26,9 @@
 #define appdelegate (AppDelegate*)[[UIApplication sharedApplication]delegate]
 
 #define k_Reveal_Sound @"ReavelSound"
+
 #define k_Background_Sound @"BackGroundSound"
+
+#define k_Unlock_Interval 3 // after the period the label become onlock
+
+#define k_Label_Completed @"New_Label_Completed"
