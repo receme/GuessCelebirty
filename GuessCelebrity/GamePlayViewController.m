@@ -113,7 +113,7 @@ typedef void (^Handler)(BOOL isCompleted);
 
 -(void)startPlay{
   
-  if ( sharedController.celebrityAry.count == 0) {
+  if (sharedController.celebrityAry.count == 0) {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Congratulation!!" message:@"You Have Completed All Level" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
       sharedController.numberOfLabel = 1;
@@ -205,7 +205,7 @@ typedef void (^Handler)(BOOL isCompleted);
   for (int i = 0; i<2; i++) {
     for (int j = 0; j<6; j++) {
       
-      UILabel *tempLabel = [[UILabel alloc]initWithFrame:CGRectMake(xPos+(j*kGridSize)+(j*5), self.imageGrid.frame.size.height+80+70+(i*kGridSize+(i*5)), kGridSize, kGridSize)];
+      UILabel *tempLabel = [[UILabel alloc]initWithFrame:CGRectMake(xPos+(j*kGridSize)+(j*5), self.imageGrid.frame.size.height+80+110+(i*kGridSize+(i*5)), kGridSize, kGridSize)];
       tempLabel.textColor = [UIColor blackColor];
       tempLabel.userInteractionEnabled = YES;
       tempLabel.font = [UIFont systemFontOfSize:20];

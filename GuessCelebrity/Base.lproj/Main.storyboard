@@ -43,19 +43,6 @@
                                     <action selector="playBtnAction:" destination="dRq-zF-1tZ" eventType="touchUpInside" id="Aom-35-2ml"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2uC-y3-Bxi">
-                                <rect key="frame" x="62" y="372" width="250" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40000000000000002" green="0.066666666666666666" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <state key="normal" title="Restart">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="restartBtnAction:" destination="dRq-zF-1tZ" eventType="touchUpInside" id="tgd-ew-NWN"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the iamge" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2hx-oH-rW3">
                                 <rect key="frame" x="16" y="212" width="343" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -86,7 +73,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eQ7-kN-Y19">
                                 <rect key="frame" x="62" y="461" width="250" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Game Sound Off">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,7 +84,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ow0-ui-rVd">
                                 <rect key="frame" x="62" y="511" width="250" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Reveal Sound Off">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -117,7 +104,6 @@
                         <outlet property="guessCelebrityLabel" destination="djh-QP-agA" id="GLI-Dr-rjs"/>
                         <outlet property="playBtn" destination="hkS-uo-gjf" id="bmw-0u-mcx"/>
                         <outlet property="reavealBtn" destination="ow0-ui-rVd" id="TaY-Ze-mNq"/>
-                        <outlet property="restartBtn" destination="2uC-y3-Bxi" id="FtK-0z-HGZ"/>
                         <outlet property="textLabel" destination="2hx-oH-rW3" id="eyV-DX-oLb"/>
                         <outlet property="titleLabel" destination="M4D-hh-Q1k" id="kS5-uy-J8Q"/>
                         <segue destination="K09-Mq-jxj" kind="push" identifier="PUSH" id="9Iq-wu-bms"/>
@@ -143,7 +129,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gqM-3L-Oa5">
-                                <rect key="frame" x="340" y="369" width="30" height="30"/>
+                                <rect key="frame" x="339.99999977648258" y="369" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="AddressViewReload.png">
@@ -154,7 +140,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xp2-b8-ihs">
-                                <rect key="frame" x="340" y="407" width="30" height="30"/>
+                                <rect key="frame" x="339.99999977648258" y="407" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
