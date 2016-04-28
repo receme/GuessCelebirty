@@ -34,7 +34,7 @@
         self.numberOfLabel = 1;
       }
       
-        NSString *resourcePath = [[NSBundle mainBundle]pathForResource:@"Celebrity" ofType:@"plist"];
+        NSString *resourcePath = [[NSBundle mainBundle]pathForResource:@"Test" ofType:@"plist"];
       self.celebrities = [[NSArray alloc]initWithContentsOfFile:resourcePath];
       NSData *data = [NSData dataWithContentsOfFile:[NSHomeDirectory() stringByAppendingString:k_Celebriteies_Dir]];
      // self.celebrityAry = [NSKeyedUnarchiver unarchiveObjectWithData:data];

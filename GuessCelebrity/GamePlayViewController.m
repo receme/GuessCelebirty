@@ -31,6 +31,8 @@ typedef void (^Handler)(BOOL isCompleted);
 @property (nonatomic, strong) NSMutableArray *resultFrameAry;
 @property (assign) NSUInteger count;
 
+@property (nonatomic, strong) UIScrollView *scoller;
+
 
 // view after completion a level
 @property (weak, nonatomic) IBOutlet UIView *viewAfterCompleteLavel;
@@ -66,6 +68,8 @@ typedef void (^Handler)(BOOL isCompleted);
   self.allBtnAry = [[NSMutableArray alloc]init];
   self.resultFrameAry = [[NSMutableArray alloc]init];
   
+  self.scoller = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kYpos, CGRectGetWidth(self.view.frame), 60)];
+  [self.view addSubview:self.scoller];
   
   [self startPlay];
   
@@ -163,6 +167,7 @@ typedef void (^Handler)(BOOL isCompleted);
   
   [self.selectedCharBtnAry removeAllObjects];
   
+  
   for (int i = 0; i<[self.celebrityName length]; i++) {
     [self.selectedCharBtnAry addObject:@""];
     
@@ -175,6 +180,10 @@ typedef void (^Handler)(BOOL isCompleted);
   NSUInteger numOfCharcter = [self.celebrityName length];
   
   float xPos = ((kScreenWidth-((numOfCharcter*kGridSize)+((numOfCharcter-1)*kSpace)))/2)+(kGridSize/2);
+  if (xPos < 20) {
+    xPos = 20;
+  }
+  
   CGPoint location = CGPointMake(xPos,kYpos);
   
   NSValue  *value = [NSValue valueWithCGPoint:location];
@@ -185,6 +194,8 @@ typedef void (^Handler)(BOOL isCompleted);
     value = [NSValue valueWithCGPoint:location];
     [self.resultFrameAry addObject:value];
   }
+  
+  [self.scoller setContentSize:CGSizeMake(xPos+10, 60)];
   
 }
 
@@ -251,11 +262,16 @@ typedef void (^Handler)(BOOL isCompleted);
 
 - (IBAction)resetBtnAction:(id)sender {
   
-  [self.selectedCharBtnAry enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+  printf("%zd",self.selectedCharBtnAry.count);
+  
+  [self.scoller.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
     
     if ([obj isKindOfClass:[UILabel class]]) {
+      printf("1");
       [self animateView:(UILabel*)obj withFlag:NO];
       
+    }else{
+      printf("not label");
     }
   }];
   [self reset];
@@ -297,9 +313,9 @@ typedef void (^Handler)(BOOL isCompleted);
 
 -(void)handleResultSequence:(UILabel *)tapLabel{
   
-  
   __block  CGPoint point;
   __block NSUInteger index;
+  __block BOOL flag = NO;
   
   if (![self.selectedCharBtnAry containsObject:tapLabel]) {
     
@@ -311,7 +327,7 @@ typedef void (^Handler)(BOOL isCompleted);
         *stop = YES;
       }
     }];
-    
+    flag = NO;
     [self.selectedCharBtnAry replaceObjectAtIndex:index withObject:tapLabel];
     NSValue *value = [self.resultFrameAry objectAtIndex:index];
     point = value.CGPointValue;
@@ -322,16 +338,28 @@ typedef void (^Handler)(BOOL isCompleted);
     [self.selectedCharBtnAry replaceObjectAtIndex:index withObject:@""];
     NSValue *value = [self.frameDic objectForKey:[NSString stringWithFormat:@"%d",(int)tapLabel.tag]];
     CGRect frame = value.CGRectValue;
+    
+    tapLabel.center = CGPointMake(tapLabel.center.x, CGRectGetMidY(self.scoller.frame));
+    [self.view addSubview:tapLabel];
+    flag = YES;
+    
     point = CGPointMake(CGRectGetMidX(frame),CGRectGetMidY(frame));
     
     
   }
   
-  
   [UIView animateWithDuration:0.3 animations:^{
     tapLabel.center = point;
     [self playAudio];
   } completion:^(BOOL finished) {
+    if (flag == NO) {
+     // [tapLabel removeFromSuperview];
+      
+      tapLabel.center = CGPointMake(point.x, 30);
+      [self.scoller scrollRectToVisible:tapLabel.frame animated:YES];
+      [self.scoller addSubview:tapLabel];
+      
+    }
     [self shakAnimation:tapLabel];
   }];
   
@@ -340,7 +368,7 @@ typedef void (^Handler)(BOOL isCompleted);
       if (isCompleted) {
         [self handleWin];
       }else{
-        [self performSelector:@selector(resetBtnAction:) withObject:nil];
+        [self performSelector:@selector(resetBtnAction:) withObject:nil afterDelay:1];
         
       }
     }];
@@ -425,6 +453,10 @@ typedef void (^Handler)(BOOL isCompleted);
 
 
 -(void)animateView:(UILabel*)tapLabel withFlag:(BOOL)flag{
+  
+  tapLabel.center = CGPointMake(tapLabel.center.x, CGRectGetMidY(self.scoller.frame));
+  [self.view addSubview:tapLabel];
+
   
   CGPoint point;
   NSValue *value = [self.frameDic objectForKey:[NSString stringWithFormat:@"%d",(int)tapLabel.tag]];
