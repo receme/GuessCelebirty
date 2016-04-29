@@ -10,10 +10,13 @@
 #import "GameController.h"
 #import "Global.h"
 
-
-
+#define k_Button_Dimension 100
+#define k_space 20
 
 @interface LabelViewController ()
+
+@property (nonatomic,strong) UIScrollView *scroller;
+
 @end
 
 @implementation LabelViewController
@@ -22,60 +25,76 @@
     [super viewDidLoad];
   self.navigationController.navigationBarHidden = YES;
   
-  for (UIView *obj in self.view.subviews) {
-    if ([obj isKindOfClass:[UIButton class]]) {
-      if (obj.tag>= 0 && obj.tag<=8) {
-        obj.layer.cornerRadius = 8;
-      }
-    }
-    
-  }
+  /*
+             k_space
+             #### k_Button_Dimension
+             k_space
+             #### k_Button_Dimension
+             k_space
+             #### k_Button_Dimension
+             k_space
+   */
   
-  [self updateUIAfterLableCompleted];
+  NSUInteger scrollerHeight = k_space+k_Button_Dimension+k_space+k_Button_Dimension+k_space+k_Button_Dimension+k_space;
+  
+  self.scroller = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 80, CGRectGetWidth(self.view.frame), scrollerHeight)];
+  [self.view addSubview:self.scroller];
+  
   
   [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(newLabelUnlock:) name:k_Label_Completed object:nil];
+  
+  [self reloadScroller];
+}
+
+-(void)reloadScroller{
+  
+  // remove if any exist previous subviews
+  [self.scroller.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [obj removeFromSuperview];
+  }];
+  
+  NSUInteger tag = 1;
+  
+  for (int i = 0; i< 3; i++) {
+    for (int j = 0; j< 10; j++) {
+      CGFloat xPos = ((j+1)*k_space) + (j*k_Button_Dimension);
+      CGFloat yPos =  ((i+1)*k_space) + (i*k_Button_Dimension);
+      UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(xPos, yPos, k_Button_Dimension, k_Button_Dimension)];
+      NSString *imageName = tag > sharedController.numberOfLabel ? @"lock" : @"unlock";
+      [btn addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
+      btn.tag = tag;
+      [btn setBackgroundColor:[UIColor whiteColor]];
+      [btn.layer setCornerRadius:4];
+      [btn setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+      tag++;
+      [self.scroller addSubview:btn];
+      
+    }
+  }
+  
+  [self.scroller setContentSize:CGSizeMake((10*k_Button_Dimension)+(11*k_space), (3*k_Button_Dimension)+(4*k_space))];
+  
+}
+-(void)tap:(UIButton *)sender{
+  
+  if (sender.tag <= sharedController.numberOfLabel) {
+    [self performSegueWithIdentifier:@"PUSH_GAME" sender:self];
+  }
   
 }
 
 -(void)newLabelUnlock:(NSNotification *)notification{
-  [self updateUIAfterLableCompleted];
+  [self reloadScroller];
 
 }
 
--(void)updateUIAfterLableCompleted{
-  NSUInteger unlockLable = sharedController.numberOfLabel / k_Unlock_Interval;
-  for (UIView *obj in self.view.subviews) {
-    if ([obj isKindOfClass:[UIButton class]]) {
-      if (obj.tag>= 0 && obj.tag<=unlockLable) {
-        [(UIButton *)obj setBackgroundImage:[UIImage imageNamed:@"unlock"] forState:UIControlStateNormal];
-      }else{
-        [(UIButton *)obj setBackgroundImage:[UIImage imageNamed:@"lock"] forState:UIControlStateNormal];
-      }
-    }
-    
-  }
-}
 
 -(void)viewDidAppear:(BOOL)animated{
   sharedController.gameStatus = YES;
  // [self performSegueWithIdentifier:@"PUSH_GAME" sender:self];
 }
 
-- (IBAction)buttonActions:(id)sender {
-  
-  UIButton *obj = (UIButton *)sender;
-  
-  NSUInteger unlockLable = sharedController.numberOfLabel / k_Unlock_Interval;
-  
-  
-  if ( obj.tag<=unlockLable) {
-    sharedController.gameStatus = YES;
-    [self performSegueWithIdentifier:@"PUSH_GAME" sender:self];
-  }else{
-    printf("unlock");
-  }
-  
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -53,6 +53,8 @@
 
 -(void)reset{
   self.celebrityAry = [NSMutableArray arrayWithArray:self.celebrities];
+  self.numberOfLabel = 1;
+  [[NSUserDefaults standardUserDefaults]setInteger:self.numberOfLabel forKey:@"NUM_LABEL"];
   //[self saveCelebrities];
 }
 

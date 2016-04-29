@@ -31,6 +31,8 @@ typedef void (^Handler)(BOOL isCompleted);
 @property (nonatomic, strong) NSMutableArray *resultFrameAry;
 @property (assign) NSUInteger count;
 
+@property (assign) BOOL executing;
+
 @property (nonatomic, strong) UIScrollView *scoller;
 
 
@@ -123,6 +125,7 @@ typedef void (^Handler)(BOOL isCompleted);
       sharedController.numberOfLabel = 1;
       sharedController.gameOnProgress = NO;
       [sharedController reset];
+      [self postNitification];
       [self.navigationController popViewControllerAnimated:YES];
       
     }];
@@ -197,6 +200,7 @@ typedef void (^Handler)(BOOL isCompleted);
   
   [self.scoller setContentSize:CGSizeMake(xPos+10, 60)];
   
+  self.executing = NO;
 }
 
 -(void)charBtnPuzzleView{
@@ -239,6 +243,11 @@ typedef void (^Handler)(BOOL isCompleted);
   
 }
 
+-(void)postNitification{
+  [[NSNotificationCenter defaultCenter]postNotificationName:k_Label_Completed object:nil];
+
+}
+
 #pragma mark - Button Action
 - (IBAction)backButtonAction:(id)sender {
   [self.navigationController popViewControllerAnimated:YES];
@@ -256,9 +265,11 @@ typedef void (^Handler)(BOOL isCompleted);
     [self.imageGrid reload];
     [self startPlay];
     // post label completed notification
-    [[NSNotificationCenter defaultCenter]postNotificationName:k_Label_Completed object:nil];
+    [self postNitification];
   }];
 }
+
+
 
 - (IBAction)resetBtnAction:(id)sender {
   
@@ -305,7 +316,9 @@ typedef void (^Handler)(BOOL isCompleted);
 
 #pragma mark - Handle Tap on Character
 -(void)handleTapOnCharacter:(UITapGestureRecognizer *)tapGesture{
-  
+  if (self.executing) {
+    return;
+  }
   UILabel *tapLabel = (UILabel*)[tapGesture view];
   [self handleResultSequence:tapLabel];
   
@@ -336,6 +349,7 @@ typedef void (^Handler)(BOOL isCompleted);
     self.count --;
     index = [self.selectedCharBtnAry indexOfObject:tapLabel];
     [self.selectedCharBtnAry replaceObjectAtIndex:index withObject:@""];
+
     NSValue *value = [self.frameDic objectForKey:[NSString stringWithFormat:@"%d",(int)tapLabel.tag]];
     CGRect frame = value.CGRectValue;
     
@@ -368,7 +382,13 @@ typedef void (^Handler)(BOOL isCompleted);
       if (isCompleted) {
         [self handleWin];
       }else{
-        [self performSelector:@selector(resetBtnAction:) withObject:nil afterDelay:1];
+        dispatch_async(dispatch_get_main_queue(), ^{
+          NSLog(@"entrou na foto");
+        //  [self performSelectorOnMainThread:@selector(resetBtnAction:) withObject:nil waitUntilDone:YES modes:nil];
+          self.executing = true;
+          [self performSelector:@selector(resetBtnAction:) withObject:nil afterDelay:1];
+        });
+        
         
       }
     }];

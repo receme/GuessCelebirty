@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41C8FCF21CD279610057F6DE /* restart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCF01CD279610057F6DE /* restart@2x.png */; };
+		41C8FCF31CD279610057F6DE /* restart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCF11CD279610057F6DE /* restart@3x.png */; };
+		41C8FCFE1CD27BF80057F6DE /* reset@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCFC1CD27BF80057F6DE /* reset@3x.png */; };
+		41C8FCFF1CD27BF80057F6DE /* reset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCFD1CD27BF80057F6DE /* reset@2x.png */; };
 		41DE8C821CCD1D52000FE789 /* LabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DE8C811CCD1D52000FE789 /* LabelViewController.m */; };
 		41EAC3D41CD19169005EE872 /* CASILLAS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41EAC3CE1CD19169005EE872 /* CASILLAS.jpg */; };
 		41EAC3D51CD19169005EE872 /* DEGEA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41EAC3CF1CD19169005EE872 /* DEGEA.jpg */; };
@@ -60,7 +64,6 @@
 		7E3DE35E1A5072290034B85A /* GuessCelebrityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3DE35D1A5072290034B85A /* GuessCelebrityTests.m */; };
 		7E3DE3691A5073360034B85A /* ImageGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3DE3681A5073360034B85A /* ImageGrid.m */; };
 		7E5293981A681F8100433133 /* Celebrity.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E5293971A681F8100433133 /* Celebrity.plist */; };
-		7E55830B1A56F1730091D011 /* AddressViewReload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E5583091A56F1730091D011 /* AddressViewReload@2x.png */; };
 		7E55830C1A56F1730091D011 /* rolando.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7E55830A1A56F1730091D011 /* rolando.jpeg */; };
 		7E5583101A57015B0091D011 /* tap-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E55830F1A57015B0091D011 /* tap-sound.mp3 */; };
 		7E5583121A57023B0091D011 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5583111A57023B0091D011 /* AudioToolbox.framework */; };
@@ -82,6 +85,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41C8FCF01CD279610057F6DE /* restart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restart@2x.png"; sourceTree = "<group>"; };
+		41C8FCF11CD279610057F6DE /* restart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restart@3x.png"; sourceTree = "<group>"; };
+		41C8FCFC1CD27BF80057F6DE /* reset@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reset@3x.png"; sourceTree = "<group>"; };
+		41C8FCFD1CD27BF80057F6DE /* reset@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reset@2x.png"; sourceTree = "<group>"; };
 		41DE8C801CCD1D52000FE789 /* LabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelViewController.h; sourceTree = "<group>"; };
 		41DE8C811CCD1D52000FE789 /* LabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelViewController.m; sourceTree = "<group>"; };
 		41EAC3CE1CD19169005EE872 /* CASILLAS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CASILLAS.jpg; sourceTree = "<group>"; };
@@ -143,7 +150,6 @@
 		7E3DE3671A5073360034B85A /* ImageGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageGrid.h; sourceTree = "<group>"; };
 		7E3DE3681A5073360034B85A /* ImageGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageGrid.m; sourceTree = "<group>"; };
 		7E5293971A681F8100433133 /* Celebrity.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Celebrity.plist; sourceTree = "<group>"; };
-		7E5583091A56F1730091D011 /* AddressViewReload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AddressViewReload@2x.png"; sourceTree = "<group>"; };
 		7E55830A1A56F1730091D011 /* rolando.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rolando.jpeg; sourceTree = "<group>"; };
 		7E55830F1A57015B0091D011 /* tap-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "tap-sound.mp3"; sourceTree = "<group>"; };
 		7E5583111A57023B0091D011 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -294,13 +300,16 @@
 			isa = PBXGroup;
 			children = (
 				41EAF9E61CCD9F1D00F0FCB3 /* lock.png */,
+				41C8FCF01CD279610057F6DE /* restart@2x.png */,
+				41C8FCF11CD279610057F6DE /* restart@3x.png */,
+				41C8FCFC1CD27BF80057F6DE /* reset@3x.png */,
+				41C8FCFD1CD27BF80057F6DE /* reset@2x.png */,
 				41EAF9E71CCD9F1D00F0FCB3 /* lock@2x.png */,
 				41EAF9E81CCD9F1D00F0FCB3 /* lock@3x.png */,
 				41EAF9E01CCD9EC900F0FCB3 /* unlock.png */,
 				41EAF9E11CCD9EC900F0FCB3 /* unlock@2x.png */,
 				41EAF9E21CCD9EC900F0FCB3 /* unlock@3x.png */,
 				41FBDCB91A6C1BDA00588B51 /* share1.png */,
-				7E5583091A56F1730091D011 /* AddressViewReload@2x.png */,
 				41FBDCBD1A6C26C900588B51 /* share2@2x.png */,
 				7E87A3221A641C1C00056128 /* grid.jpg */,
 				7E55830A1A56F1730091D011 /* rolando.jpeg */,
@@ -420,15 +429,16 @@
 				41FCC6361CD1223100E13076 /* RONALDINHO.jpg in Resources */,
 				41FCC6341CD1223100E13076 /* RAMOS.jpg in Resources */,
 				41EAC3D81CD19169005EE872 /* SNEIJDER.jpg in Resources */,
+				41C8FCF31CD279610057F6DE /* restart@3x.png in Resources */,
 				41FCC6391CD1223100E13076 /* SAUREZ.jpg in Resources */,
 				41FCC62D1CD1223100E13076 /* KAKA.jpg in Resources */,
 				41FCC62F1CD1223100E13076 /* NEYMAR.jpg in Resources */,
 				41FCC6271CD1223100E13076 /* BECKHAM.jpg in Resources */,
+				41C8FCFF1CD27BF80057F6DE /* reset@2x.png in Resources */,
 				7E5583101A57015B0091D011 /* tap-sound.mp3 in Resources */,
 				41EAF9EB1CCD9F1D00F0FCB3 /* lock@3x.png in Resources */,
 				41FBDCBA1A6C1BDA00588B51 /* share1.png in Resources */,
 				41EAC3D61CD19169005EE872 /* DIMARIA.jpg in Resources */,
-				7E55830B1A56F1730091D011 /* AddressViewReload@2x.png in Resources */,
 				41FCC6261CD1223100E13076 /* BALE.jpg in Resources */,
 				41FCC6371CD1223100E13076 /* RONALDO.jpg in Resources */,
 				7E87A3231A641C1C00056128 /* grid.jpg in Resources */,
@@ -449,7 +459,9 @@
 				41EAC3DB1CD191C6005EE872 /* ALONSO.jpg in Resources */,
 				7E5293981A681F8100433133 /* Celebrity.plist in Resources */,
 				41FCC63D1CD1223100E13076 /* XAZI.jpg in Resources */,
+				41C8FCF21CD279610057F6DE /* restart@2x.png in Resources */,
 				7E55830C1A56F1730091D011 /* rolando.jpeg in Resources */,
+				41C8FCFE1CD27BF80057F6DE /* reset@3x.png in Resources */,
 				41FCC62C1CD1223100E13076 /* INESTA.jpg in Resources */,
 				41FCC6281CD1223100E13076 /* COSTA.jpg in Resources */,
 				41FCC6401CD1258D00E13076 /* Test.plist in Resources */,
