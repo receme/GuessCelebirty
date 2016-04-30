@@ -13,14 +13,13 @@
 #import "Global.h"
 
 #define k_CharSet @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-#define K_REVEAL_NUM 6
 
 typedef void (^Handler)(BOOL isCompleted);
 
 @interface GamePlayViewController ()<ImageGridDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) ImageGrid *imageGrid;
-@property (nonatomic, strong) NSMutableArray *selectedCharBtnAry;
+@property (nonatomic, strong) NSMutableArray *selectedCharBtnAry; // tap sequence array
 @property (nonatomic ,strong) NSMutableDictionary *frameDic;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic, strong) NSString *celebrityName;
@@ -53,12 +52,10 @@ typedef void (^Handler)(BOOL isCompleted);
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+  self.navigationController.navigationBarHidden = YES;
   self.view.backgroundColor = kBackgroundColor;
   self.viewAfterCompleteLavel.alpha = 0;
   self.viewAfterCompleteLavel.center = CGPointMake(self.view.frame.size.width/2, -self.view.frame.size.height/2);
-  
-  self.navigationController.navigationBarHidden = YES;
   
   [self playAudio];
   self.imageGrid = [[ImageGrid alloc]initWithFrame:CGRectMake((self.view.frame.size.width-250)/2, 80, 250, 250)];
@@ -70,20 +67,36 @@ typedef void (^Handler)(BOOL isCompleted);
   self.allBtnAry = [[NSMutableArray alloc]init];
   self.resultFrameAry = [[NSMutableArray alloc]init];
   
+  // ScrollView Which hold the tap sequence
   self.scoller = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kYpos, CGRectGetWidth(self.view.frame), 60)];
   [self.view addSubview:self.scoller];
   
   [self startPlay];
   
   [self viewOrientation];
+}
+
+/**
+ The number of reveal remain to top
+  - returns NSUInteger:The total number of reveal
+ */
+
+-(NSUInteger)totalRevel{
   
-  
+  NSUInteger unlock = [sharedController getCurrentLabel];
+  if (unlock > 4) {
+    return 3;
+  }else if (unlock > 2){
+    return 4;
+  }else{
+    return 5;
+  }
   
 }
 
 -(void)animationAfterCompletionLevel{
-  self.usedReveals.text = [NSString stringWithFormat:@"Used Reveals %zd",K_REVEAL_NUM- self.numbeReveal];
-  self.intialReveals.text = [NSString stringWithFormat:@"Initial Reveals %zd",K_REVEAL_NUM];
+  self.usedReveals.text = [NSString stringWithFormat:@"Used Reveals %zd",[self totalRevel] - self.numbeReveal];
+  self.intialReveals.text = [NSString stringWithFormat:@"Initial Reveals %zd",[self totalRevel]];
   
   self.viewAfterCompleteLavel.alpha = 1;
   [self.view bringSubviewToFront:self.viewAfterCompleteLavel];
@@ -119,10 +132,6 @@ typedef void (^Handler)(BOOL isCompleted);
 
 -(void)startPlay{
   
- // NSUInteger label = [sharedController getCurrentLabel];
-  
-  printf("dd %zd dd %zd",[sharedController getCurrentLabel], sharedController.celebrityAry.count);
-  
   if ([sharedController getCurrentLabel]-1 == sharedController.celebrityAry.count) {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Congratulation!!" message:@"You Have Completed All Level" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -138,14 +147,14 @@ typedef void (^Handler)(BOOL isCompleted);
     [self presentViewController:alert animated:YES completion:nil];
     
   }else{
-    self.numbeReveal = K_REVEAL_NUM;
+    self.numbeReveal = [self totalRevel];
     self.revealLabel.text = [NSString stringWithFormat:@"%zd Reveals left",self.numbeReveal];
     self.levelCompleted = NO;
     
     
     NSUInteger index = [sharedController getCurrentLabel]-1;
     //[self getRandomNumberBetween:0 to:sharedController.celebrityAry.count-1];
-  
+    
     self.celebrityName = [sharedController.celebrityAry objectAtIndex:index];
     self.titleLabel.text = [NSString stringWithFormat:@"LEVEL %zd",[sharedController getCurrentLabel]];
     sharedController.gameOnProgress = YES;
@@ -174,7 +183,6 @@ typedef void (^Handler)(BOOL isCompleted);
 -(void)reset{
   
   [self.selectedCharBtnAry removeAllObjects];
-  
   
   for (int i = 0; i<[self.celebrityName length]; i++) {
     [self.selectedCharBtnAry addObject:@""];
@@ -250,7 +258,7 @@ typedef void (^Handler)(BOOL isCompleted);
 
 -(void)postNitification{
   [[NSNotificationCenter defaultCenter]postNotificationName:k_Label_Completed object:nil];
-
+  
 }
 
 #pragma mark - Button Action
@@ -266,7 +274,7 @@ typedef void (^Handler)(BOOL isCompleted);
     self.viewAfterCompleteLavel.alpha = 0;
     [sharedController setCurrentLabel:[sharedController getCurrentLabel]+1];
     sharedController.gameStatus = YES;
-    [self.audioPlayer play];
+    [self playAudio];
     [self.imageGrid reload];
     [self startPlay];
     // post label completed notification
@@ -302,8 +310,7 @@ typedef void (^Handler)(BOOL isCompleted);
 }
 
 
--(UIImage*)screenshot
-{
+-(UIImage*)screenshot{
   
   UIGraphicsBeginImageContext(self.view.frame.size);
   
@@ -352,7 +359,7 @@ typedef void (^Handler)(BOOL isCompleted);
     self.count --;
     index = [self.selectedCharBtnAry indexOfObject:tapLabel];
     [self.selectedCharBtnAry replaceObjectAtIndex:index withObject:@""];
-
+    
     NSValue *value = [self.frameDic objectForKey:[NSString stringWithFormat:@"%d",(int)tapLabel.tag]];
     CGRect frame = value.CGRectValue;
     
@@ -370,7 +377,7 @@ typedef void (^Handler)(BOOL isCompleted);
     [self playAudio];
   } completion:^(BOOL finished) {
     if (flag == NO) {
-     // [tapLabel removeFromSuperview];
+      // [tapLabel removeFromSuperview];
       
       tapLabel.center = CGPointMake(point.x, 30);
       [self.scoller scrollRectToVisible:tapLabel.frame animated:YES];
@@ -387,7 +394,7 @@ typedef void (^Handler)(BOOL isCompleted);
       }else{
         dispatch_async(dispatch_get_main_queue(), ^{
           NSLog(@"entrou na foto");
-        //  [self performSelectorOnMainThread:@selector(resetBtnAction:) withObject:nil waitUntilDone:YES modes:nil];
+          //  [self performSelectorOnMainThread:@selector(resetBtnAction:) withObject:nil waitUntilDone:YES modes:nil];
           self.executing = true;
           [self performSelector:@selector(resetBtnAction:) withObject:nil afterDelay:1];
         });
@@ -400,10 +407,7 @@ typedef void (^Handler)(BOOL isCompleted);
   
 }
 
-
-
 #pragma mark - Check For the matching
-
 -(void)analysisResultWithCompletion:(Handler)handler{
   
   NSMutableString *resultString = [[NSMutableString alloc]init];
@@ -444,13 +448,11 @@ typedef void (^Handler)(BOOL isCompleted);
       
     }];
     
-    
   }
   
 }
 
 #pragma mark - Handle After Completed A Level
-
 -(void)handleWin{
   
   [UIView animateKeyframesWithDuration:0.5 delay:0.5 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
@@ -469,13 +471,10 @@ typedef void (^Handler)(BOOL isCompleted);
 }
 
 #pragma mark- Handle Animation
-
-
 -(void)animateView:(UILabel*)tapLabel withFlag:(BOOL)flag{
   
   tapLabel.center = CGPointMake(tapLabel.center.x, CGRectGetMidY(self.scoller.frame));
   [self.view addSubview:tapLabel];
-
   
   CGPoint point;
   NSValue *value = [self.frameDic objectForKey:[NSString stringWithFormat:@"%d",(int)tapLabel.tag]];
@@ -488,7 +487,6 @@ typedef void (^Handler)(BOOL isCompleted);
   } completion:^(BOOL finished) {
     [self shakAnimation:tapLabel];
   }];
-  
   
 }
 
@@ -539,7 +537,6 @@ typedef void (^Handler)(BOOL isCompleted);
 
 #pragma mark - 360 Rotation View
 -(CABasicAnimation *)rotationInitialization{
-  
   CABasicAnimation* rotationAnimation;
   rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
   rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 /* full rotation*/ * 10.0f * 0.5 ];

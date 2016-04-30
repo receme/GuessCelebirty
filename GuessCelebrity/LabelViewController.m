@@ -22,18 +22,18 @@
 @implementation LabelViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+  [super viewDidLoad];
   self.navigationController.navigationBarHidden = YES;
-
+  
   
   /*
-             k_space
-             #### k_Button_Dimension
-             k_space
-             #### k_Button_Dimension
-             k_space
-             #### k_Button_Dimension
-             k_space
+   k_space
+   #### k_Button_Dimension
+   k_space
+   #### k_Button_Dimension
+   k_space
+   #### k_Button_Dimension
+   k_space
    */
   
   NSUInteger scrollerHeight = k_space+k_Button_Dimension+k_space+k_Button_Dimension+k_space+k_Button_Dimension+k_space;
@@ -41,14 +41,12 @@
   self.scroller = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 80, CGRectGetWidth(self.view.frame), scrollerHeight)];
   [self.view addSubview:self.scroller];
   
-  
   [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(newLabelUnlock:) name:k_Label_Completed object:nil];
-  
   [self reloadScroller];
+  
 }
 
 -(void)reloadScroller{
-  
   // remove if any exist previous subviews
   [self.scroller.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
     [obj removeFromSuperview];
@@ -76,46 +74,44 @@
   [self.scroller setContentSize:CGSizeMake((10*k_Button_Dimension)+(11*k_space), (3*k_Button_Dimension)+(4*k_space))];
   
 }
--(void)tap:(UIButton *)sender{
+
+- (IBAction)backAction:(id)sender {
+  [self.navigationController popViewControllerAnimated:YES];
   
+}
+
+-(void)tap:(UIButton *)sender{
   if (sender.tag <= [sharedController unlockLabelGet] ) {
-   [sharedController setCurrentLabel:sender.tag];
-   // sharedController.current = sender.tag;
+    [sharedController setCurrentLabel:sender.tag];
     [self performSegueWithIdentifier:@"PUSH_GAME" sender:self];
   }
-  
 }
 
 -(void)newLabelUnlock:(NSNotification *)notification{
   [self reloadScroller];
-
+  
 }
-
 
 -(void)viewDidAppear:(BOOL)animated{
   sharedController.gameStatus = YES;
- // [self performSegueWithIdentifier:@"PUSH_GAME" sender:self];
+  // [self performSegueWithIdentifier:@"PUSH_GAME" sender:self];
 }
-
-
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
-- (IBAction)backAction:(id)sender {
-  [self.navigationController popViewControllerAnimated:YES];
-}
+
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 -(void)dealloc{
   [[NSNotificationCenter defaultCenter]removeObserver:self];
 }

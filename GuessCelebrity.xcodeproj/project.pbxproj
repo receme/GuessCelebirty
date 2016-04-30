@@ -12,6 +12,8 @@
 		41C8FCFE1CD27BF80057F6DE /* reset@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCFC1CD27BF80057F6DE /* reset@3x.png */; };
 		41C8FCFF1CD27BF80057F6DE /* reset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCFD1CD27BF80057F6DE /* reset@2x.png */; };
 		41DE8C821CCD1D52000FE789 /* LabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DE8C811CCD1D52000FE789 /* LabelViewController.m */; };
+		41E775991CD481D10017E456 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E775981CD481D10017E456 /* back@3x.png */; };
+		41E7759B1CD481D40017E456 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E7759A1CD481D40017E456 /* back@2x.png */; };
 		41E800AC1CD3B84500788983 /* InstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E800AB1CD3B84500788983 /* InstructionViewController.m */; };
 		41EAC3D41CD19169005EE872 /* CASILLAS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41EAC3CE1CD19169005EE872 /* CASILLAS.jpg */; };
 		41EAC3D51CD19169005EE872 /* DEGEA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41EAC3CF1CD19169005EE872 /* DEGEA.jpg */; };
@@ -92,6 +94,8 @@
 		41C8FCFD1CD27BF80057F6DE /* reset@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reset@2x.png"; sourceTree = "<group>"; };
 		41DE8C801CCD1D52000FE789 /* LabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelViewController.h; sourceTree = "<group>"; };
 		41DE8C811CCD1D52000FE789 /* LabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelViewController.m; sourceTree = "<group>"; };
+		41E775981CD481D10017E456 /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
+		41E7759A1CD481D40017E456 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		41E800AA1CD3B84500788983 /* InstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionViewController.h; sourceTree = "<group>"; };
 		41E800AB1CD3B84500788983 /* InstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionViewController.m; sourceTree = "<group>"; };
 		41EAC3CE1CD19169005EE872 /* CASILLAS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CASILLAS.jpg; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 			children = (
 				41EAF9E61CCD9F1D00F0FCB3 /* lock.png */,
 				41C8FCF01CD279610057F6DE /* restart@2x.png */,
+				41E7759A1CD481D40017E456 /* back@2x.png */,
+				41E775981CD481D10017E456 /* back@3x.png */,
 				41C8FCF11CD279610057F6DE /* restart@3x.png */,
 				41C8FCFC1CD27BF80057F6DE /* reset@3x.png */,
 				41C8FCFD1CD27BF80057F6DE /* reset@2x.png */,
@@ -434,6 +440,7 @@
 				41FCC6361CD1223100E13076 /* RONALDINHO.jpg in Resources */,
 				41FCC6341CD1223100E13076 /* RAMOS.jpg in Resources */,
 				41EAC3D81CD19169005EE872 /* SNEIJDER.jpg in Resources */,
+				41E7759B1CD481D40017E456 /* back@2x.png in Resources */,
 				41C8FCF31CD279610057F6DE /* restart@3x.png in Resources */,
 				41FCC6391CD1223100E13076 /* SAUREZ.jpg in Resources */,
 				41FCC62D1CD1223100E13076 /* KAKA.jpg in Resources */,
@@ -442,6 +449,7 @@
 				41C8FCFF1CD27BF80057F6DE /* reset@2x.png in Resources */,
 				7E5583101A57015B0091D011 /* tap-sound.mp3 in Resources */,
 				41EAF9EB1CCD9F1D00F0FCB3 /* lock@3x.png in Resources */,
+				41E775991CD481D10017E456 /* back@3x.png in Resources */,
 				41FBDCBA1A6C1BDA00588B51 /* share1.png in Resources */,
 				41EAC3D61CD19169005EE872 /* DIMARIA.jpg in Resources */,
 				41FCC6261CD1223100E13076 /* BALE.jpg in Resources */,

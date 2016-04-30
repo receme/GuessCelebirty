@@ -14,10 +14,7 @@
 
 
 @interface InitialViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *moreAppsBtn;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
-@property (weak, nonatomic) IBOutlet UIButton *restartBtn;
-@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property (weak, nonatomic) IBOutlet UILabel *guessCelebrityLabel;
 @property (strong, nonatomic) NSTimer *animationTimer;
 @property (weak, nonatomic) IBOutlet UIButton *backGroundMusicBtn;
@@ -27,21 +24,15 @@
 
 @implementation InitialViewController
 
-- (IBAction)backButtonAction:(id)sender {
-}
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  
+  self.guessCelebrityLabel.text = kName;
   
   [self makeBtnRound];
-  
   [self changeBackgroundMusicBtnTitle];
-  
-  // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
-}
 
+}
 
 - (void)changeBackgroundMusicBtnTitle{
   if ([[NSUserDefaults standardUserDefaults]boolForKey:k_Background_Sound]) {
@@ -58,15 +49,15 @@
   self.animationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(animatedButton:) userInfo:nil repeats:YES];
   
 }
+
 -(void)makeBtnRound{
   
   
-  self.moreAppsBtn.layer.cornerRadius = self.playBtn.layer.cornerRadius =self.restartBtn.layer.cornerRadius= 23;
+  self.playBtn.layer.cornerRadius = 23;
+  self.playBtn.clipsToBounds = YES;
   
-  self.moreAppsBtn.clipsToBounds=self.playBtn.clipsToBounds=self.restartBtn.clipsToBounds = YES;
-  
-  self.moreAppsBtn.layer.borderWidth = self.playBtn.layer.borderWidth = self.restartBtn.layer.borderWidth = 3;
-  self.moreAppsBtn.layer.borderColor=self.playBtn.layer.borderColor=self.restartBtn.layer.borderColor = [UIColor whiteColor].CGColor;
+  self.playBtn.layer.borderWidth = 3;
+  self.playBtn.layer.borderColor= [UIColor whiteColor].CGColor;
 }
 
 #pragma mark- Button Action
@@ -83,14 +74,6 @@
   sharedController.gameStatus = YES;
   [_animationTimer invalidate];
   [self performSegueWithIdentifier:@"PUSH" sender:self];
-  //  UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-  //  LabelViewController *obj = [main instantiateViewControllerWithIdentifier:@"LABEL_VC"];
-  //  [self.navigationController pushViewController:obj animated:YES];
-  //  [self performSegueWithIdentifier:@"LABEL_VC" sender:self];
-}
-
-- (IBAction)moreApsBtnAction:(id)sender {
-  
 }
 
 - (IBAction)backgroundSoundOffbtnAction:(id)sender {
@@ -120,19 +103,19 @@
     [self.reavealBtn setTitle:@"Reveal Sound Off" forState:UIControlStateNormal];
   }
   
-  //[appdelegate playBackgroundMusic];
 }
 
 -(void)animatedButton:(NSTimer *)timer{
   [UIView animateWithDuration:0.5 animations:^{
-    self.moreAppsBtn.layer.affineTransform=self.playBtn.layer.affineTransform=self.restartBtn.layer.affineTransform = self.guessCelebrityLabel.layer.affineTransform =  CGAffineTransformMakeScale(0.8, 0.8);
+    self.guessCelebrityLabel.layer.affineTransform =  CGAffineTransformMakeScale(0.8, 0.8);
   } completion:^(BOOL finished) {
     [UIView animateWithDuration:0.5 animations:^{
-      self.moreAppsBtn.layer.affineTransform=self.playBtn.layer.affineTransform=self.restartBtn.layer.affineTransform = self.guessCelebrityLabel.layer.affineTransform =  CGAffineTransformIdentity;
+      self.guessCelebrityLabel.layer.affineTransform =  CGAffineTransformIdentity;
       
     }];
   }];
 }
+
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
