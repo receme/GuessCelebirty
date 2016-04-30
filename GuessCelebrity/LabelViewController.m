@@ -64,7 +64,7 @@
       CustomLabel *btn = [[CustomLabel alloc]initWithFrame:CGRectMake(xPos, yPos, kSize, kSize)];
       NSString *imageName = tag > [sharedController unlockLabelGet] ? @"lock" : @"unlock";
       [btn.labelBtn addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
-      btn.tag = tag;
+      btn.labelTag.tag = tag;
       btn.labelTag.text = [NSString stringWithFormat:@"%zd",tag];
       [btn.labelBtn setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
       tag++;
