@@ -9,8 +9,9 @@
 #import "LabelViewController.h"
 #import "GameController.h"
 #import "Global.h"
+#import "CustomLabel.h"
 
-#define k_Button_Dimension 100
+//#define k_Button_Dimension 100
 #define k_space 20
 
 @interface LabelViewController ()
@@ -36,9 +37,9 @@
    k_space
    */
   
-  NSUInteger scrollerHeight = k_space+k_Button_Dimension+k_space+k_Button_Dimension+k_space+k_Button_Dimension+k_space;
+//  NSUInteger scrollerHeight = k_space+k_Button_Dimension+k_space+k_Button_Dimension+k_space+k_Button_Dimension+k_space;
   
-  self.scroller = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 80, CGRectGetWidth(self.view.frame), scrollerHeight)];
+  self.scroller = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 80, CGRectGetWidth(self.view.frame), kScreenHeight-(80+40))];
   [self.view addSubview:self.scroller];
   
   [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(newLabelUnlock:) name:k_Label_Completed object:nil];
@@ -54,24 +55,25 @@
   
   NSUInteger tag = 1;
   
-  for (int i = 0; i< 3; i++) {
-    for (int j = 0; j< 10; j++) {
-      CGFloat xPos = ((j+1)*k_space) + (j*k_Button_Dimension);
-      CGFloat yPos =  ((i+1)*k_space) + (i*k_Button_Dimension);
-      UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(xPos, yPos, k_Button_Dimension, k_Button_Dimension)];
+  CGFloat kSize = (kScreenWidth - (4*k_space))/3;
+  
+  for (int i = 0; i< 10; i++) {
+    for (int j = 0; j< 3; j++) {
+      CGFloat xPos = ((j+1)*k_space) + (j*kSize);
+      CGFloat yPos =  ((i+1)*k_space) + (i*kSize);
+      CustomLabel *btn = [[CustomLabel alloc]initWithFrame:CGRectMake(xPos, yPos, kSize, kSize)];
       NSString *imageName = tag > [sharedController unlockLabelGet] ? @"lock" : @"unlock";
-      [btn addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
+      [btn.labelBtn addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
       btn.tag = tag;
-      [btn setBackgroundColor:[UIColor whiteColor]];
-      [btn.layer setCornerRadius:4];
-      [btn setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+      btn.labelTag.text = [NSString stringWithFormat:@"%zd",tag];
+      [btn.labelBtn setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
       tag++;
       [self.scroller addSubview:btn];
       
     }
   }
   
-  [self.scroller setContentSize:CGSizeMake((10*k_Button_Dimension)+(11*k_space), (3*k_Button_Dimension)+(4*k_space))];
+  [self.scroller setContentSize:CGSizeMake((3*kSize)+(4*k_space), (10*kSize)+(11*k_space))];
   
 }
 
