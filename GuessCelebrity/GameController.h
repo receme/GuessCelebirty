@@ -11,15 +11,16 @@
 @interface GameController : NSObject
 @property (assign) BOOL gameStatus;  // yes play no restart
 @property (assign) BOOL gameOnProgress;
-@property (assign) NSUInteger numberOfLabel;
-@property (assign) NSUInteger numberOfCoin;
 @property (nonatomic, strong) NSString *celebrityName;
-@property (strong) NSMutableArray *celebrityAry;
-@property (strong) NSArray *celebrities;
+@property (strong) NSArray *celebrityAry;
+
 
 
 
 + (instancetype)sharedController;
 - (void)reset;
-- (void)saveCelebrities;
+-(NSUInteger)getCurrentLabel;
+-(void)setCurrentLabel:(NSUInteger)label;
+-(NSUInteger)unlockLabelGet;
+-(void)unlockLabelSet:(NSUInteger)numberOfLabelUnlocked;
 @end

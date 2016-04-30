@@ -116,7 +116,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="How Play" id="PWt-KW-ZWS">
+                                    <navigationItem title="How To Play" id="PWt-KW-ZWS">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="iHT-gF-GmX">
                                             <connections>
                                                 <action selector="doneAction:" destination="iWy-tI-BPG" id="4nP-qR-3C1"/>
@@ -125,6 +125,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aOz-95-Q2Y">
+                                <rect key="frame" x="0.0" y="53" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   self.navigationController.navigationBarHidden = YES;
+
   
   /*
              k_space
@@ -60,7 +61,7 @@
       CGFloat xPos = ((j+1)*k_space) + (j*k_Button_Dimension);
       CGFloat yPos =  ((i+1)*k_space) + (i*k_Button_Dimension);
       UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(xPos, yPos, k_Button_Dimension, k_Button_Dimension)];
-      NSString *imageName = tag > sharedController.numberOfLabel ? @"lock" : @"unlock";
+      NSString *imageName = tag > [sharedController unlockLabelGet] ? @"lock" : @"unlock";
       [btn addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
       btn.tag = tag;
       [btn setBackgroundColor:[UIColor whiteColor]];
@@ -77,7 +78,9 @@
 }
 -(void)tap:(UIButton *)sender{
   
-  if (sender.tag <= sharedController.numberOfLabel) {
+  if (sender.tag <= [sharedController unlockLabelGet] ) {
+   [sharedController setCurrentLabel:sender.tag];
+   // sharedController.current = sender.tag;
     [self performSegueWithIdentifier:@"PUSH_GAME" sender:self];
   }
   

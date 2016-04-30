@@ -119,10 +119,14 @@ typedef void (^Handler)(BOOL isCompleted);
 
 -(void)startPlay{
   
-  if (sharedController.celebrityAry.count == 0) {
+ // NSUInteger label = [sharedController getCurrentLabel];
+  
+  printf("dd %zd dd %zd",[sharedController getCurrentLabel], sharedController.celebrityAry.count);
+  
+  if ([sharedController getCurrentLabel]-1 == sharedController.celebrityAry.count) {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Congratulation!!" message:@"You Have Completed All Level" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-      sharedController.numberOfLabel = 1;
+      [sharedController setCurrentLabel:1];
       sharedController.gameOnProgress = NO;
       [sharedController reset];
       [self postNitification];
@@ -139,10 +143,11 @@ typedef void (^Handler)(BOOL isCompleted);
     self.levelCompleted = NO;
     
     
-    NSUInteger index = [self getRandomNumberBetween:0 to:sharedController.celebrityAry.count-1];
+    NSUInteger index = [sharedController getCurrentLabel]-1;
+    //[self getRandomNumberBetween:0 to:sharedController.celebrityAry.count-1];
   
     self.celebrityName = [sharedController.celebrityAry objectAtIndex:index];
-    self.titleLabel.text = [NSString stringWithFormat:@"LEVEL %zd",sharedController.numberOfLabel];
+    self.titleLabel.text = [NSString stringWithFormat:@"LEVEL %zd",[sharedController getCurrentLabel]];
     sharedController.gameOnProgress = YES;
     
     
@@ -259,7 +264,7 @@ typedef void (^Handler)(BOOL isCompleted);
     self.viewAfterCompleteLavel.center = CGPointMake(self.view.frame.size.width/2, -self.view.frame.size.height/2);
   } completion:^(BOOL finished) {
     self.viewAfterCompleteLavel.alpha = 0;
-    sharedController.numberOfLabel = sharedController.numberOfLabel+1;
+    [sharedController setCurrentLabel:[sharedController getCurrentLabel]+1];
     sharedController.gameStatus = YES;
     [self.audioPlayer play];
     [self.imageGrid reload];
@@ -273,12 +278,10 @@ typedef void (^Handler)(BOOL isCompleted);
 
 - (IBAction)resetBtnAction:(id)sender {
   
-  printf("%zd",self.selectedCharBtnAry.count);
-  
   [self.scoller.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
     
     if ([obj isKindOfClass:[UILabel class]]) {
-      printf("1");
+      
       [self animateView:(UILabel*)obj withFlag:NO];
       
     }else{
@@ -413,12 +416,8 @@ typedef void (^Handler)(BOOL isCompleted);
   }];
   
   if ([resultString isEqualToString:self.celebrityName]) {
-    NSLog(@"win...");
     
     self.levelCompleted = YES;
-    if ([sharedController.celebrityAry containsObject:self.celebrityName]) {
-      [sharedController.celebrityAry removeObject:self.celebrityName];
-    }
     handler(YES);
     
   }else{

@@ -42,10 +42,6 @@
   // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
 
--(void)saveCurrentState{
-  printf("save state");
-  [sharedController saveCelebrities];
-}
 
 - (void)changeBackgroundMusicBtnTitle{
   if ([[NSUserDefaults standardUserDefaults]boolForKey:k_Background_Sound]) {
@@ -78,7 +74,7 @@
 - (IBAction)restartBtnAction:(id)sender {
   sharedController.gameStatus = NO;
   sharedController.gameOnProgress = NO;
-  sharedController.numberOfLabel = 1;
+  [sharedController setCurrentLabel:1];
   [_animationTimer invalidate];
   [self performSegueWithIdentifier:@"PUSH_GAME" sender:self];
 }
