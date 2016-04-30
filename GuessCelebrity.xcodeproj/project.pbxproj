@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41769D041CD50D50009B1EF0 /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41769D031CD50D50009B1EF0 /* CustomLabel.m */; };
 		41C8FCF21CD279610057F6DE /* restart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCF01CD279610057F6DE /* restart@2x.png */; };
 		41C8FCF31CD279610057F6DE /* restart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCF11CD279610057F6DE /* restart@3x.png */; };
 		41C8FCFE1CD27BF80057F6DE /* reset@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCFC1CD27BF80057F6DE /* reset@3x.png */; };
@@ -88,6 +89,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41769D021CD50D50009B1EF0 /* CustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLabel.h; sourceTree = "<group>"; };
+		41769D031CD50D50009B1EF0 /* CustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLabel.m; sourceTree = "<group>"; };
 		41C8FCF01CD279610057F6DE /* restart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restart@2x.png"; sourceTree = "<group>"; };
 		41C8FCF11CD279610057F6DE /* restart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restart@3x.png"; sourceTree = "<group>"; };
 		41C8FCFC1CD27BF80057F6DE /* reset@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reset@3x.png"; sourceTree = "<group>"; };
@@ -191,6 +194,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41769D011CD50D0B009B1EF0 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				41769D021CD50D50009B1EF0 /* CustomLabel.h */,
+				41769D031CD50D50009B1EF0 /* CustomLabel.m */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
 		41FCC5FC1CD121FF00E13076 /* Celbrity */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +276,7 @@
 				7E3DE3491A5072290034B85A /* GamePlayViewController.m */,
 				41E800AA1CD3B84500788983 /* InstructionViewController.h */,
 				41E800AB1CD3B84500788983 /* InstructionViewController.m */,
+				41769D011CD50D0B009B1EF0 /* CustomView */,
 				7EA757421A66DE3A00D97EE0 /* Data Model */,
 				7E3DE34B1A5072290034B85A /* Main.storyboard */,
 				7E3DE34E1A5072290034B85A /* Images.xcassets */,
@@ -505,6 +518,7 @@
 				7E9681271A598AA3005F27B6 /* PrepareString.m in Sources */,
 				7E3DE3691A5073360034B85A /* ImageGrid.m in Sources */,
 				41DE8C821CCD1D52000FE789 /* LabelViewController.m in Sources */,
+				41769D041CD50D50009B1EF0 /* CustomLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
