@@ -12,6 +12,7 @@
 		4110C0331CD5BEF3005C5B47 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4110C0311CD5BEF3005C5B47 /* close@2x.png */; };
 		4110C0341CD5BEF3005C5B47 /* close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4110C0321CD5BEF3005C5B47 /* close@3x.png */; };
 		41769D041CD50D50009B1EF0 /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41769D031CD50D50009B1EF0 /* CustomLabel.m */; };
+		41C190ED1CD5F17A00A9A535 /* Apple Chancery.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41C190EC1CD5F10F00A9A535 /* Apple Chancery.ttf */; };
 		41C8FCF21CD279610057F6DE /* restart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCF01CD279610057F6DE /* restart@2x.png */; };
 		41C8FCF31CD279610057F6DE /* restart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCF11CD279610057F6DE /* restart@3x.png */; };
 		41DE8C821CCD1D52000FE789 /* LabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DE8C811CCD1D52000FE789 /* LabelViewController.m */; };
@@ -116,6 +117,7 @@
 		4110C0321CD5BEF3005C5B47 /* close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@3x.png"; sourceTree = "<group>"; };
 		41769D021CD50D50009B1EF0 /* CustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLabel.h; sourceTree = "<group>"; };
 		41769D031CD50D50009B1EF0 /* CustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLabel.m; sourceTree = "<group>"; };
+		41C190EC1CD5F10F00A9A535 /* Apple Chancery.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apple Chancery.ttf"; sourceTree = "<group>"; };
 		41C8FCF01CD279610057F6DE /* restart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restart@2x.png"; sourceTree = "<group>"; };
 		41C8FCF11CD279610057F6DE /* restart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restart@3x.png"; sourceTree = "<group>"; };
 		41DE8C801CCD1D52000FE789 /* LabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelViewController.h; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 			children = (
 				53A957831CC805D90013EE51 /* background_music2.wav */,
 				7E55830F1A57015B0091D011 /* tap-sound.mp3 */,
+				41C190EC1CD5F10F00A9A535 /* Apple Chancery.ttf */,
 				41FCC5FC1CD121FF00E13076 /* Celbrity */,
 				7E5583081A56F1730091D011 /* Img */,
 				7E3DE3421A5072290034B85A /* Info.plist */,
@@ -515,6 +518,7 @@
 				5361BBC91CD5314400CE05C2 /* reset@3x.png in Resources */,
 				41FCC6241CD1223100E13076 /* 23.jpg in Resources */,
 				41FCC6351CD1223100E13076 /* ROBEN.jpg in Resources */,
+				41C190ED1CD5F17A00A9A535 /* Apple Chancery.ttf in Resources */,
 				5361BBB81CD52F7A00CE05C2 /* lock.png in Resources */,
 				5361BBAA1CD5268400CE05C2 /* info@2x.png in Resources */,
 				41FCC61E1CD1223100E13076 /* 5.jpg in Resources */,
