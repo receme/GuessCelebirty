@@ -9,7 +9,7 @@
 #import "ImageGrid.h"
 #define kGridSize 40
 
-#define kName @"GUESS THE PLAYERS"
+#define kName @"Guess the players"
 
 #define kNavColor [UIColor colorWithRed:0.478f green:0.106f blue:0.063f alpha:1]
 

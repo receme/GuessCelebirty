@@ -33,7 +33,7 @@
     self = [super init];
     if (self) {
       
-        NSString *resourcePath = [[NSBundle mainBundle]pathForResource:@"Test" ofType:@"plist"];
+        NSString *resourcePath = [[NSBundle mainBundle]pathForResource:@"Celebrity" ofType:@"plist"];
       self.celebrityAry = [[NSArray alloc]initWithContentsOfFile:resourcePath];
       self.myLabel = 1;
      

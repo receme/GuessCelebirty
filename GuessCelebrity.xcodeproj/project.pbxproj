@@ -13,6 +13,8 @@
 		4110C0341CD5BEF3005C5B47 /* close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4110C0321CD5BEF3005C5B47 /* close@3x.png */; };
 		41769D041CD50D50009B1EF0 /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41769D031CD50D50009B1EF0 /* CustomLabel.m */; };
 		41C190ED1CD5F17A00A9A535 /* Apple Chancery.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41C190EC1CD5F10F00A9A535 /* Apple Chancery.ttf */; };
+		41C190EF1CD5F73A00A9A535 /* VANPERSIE.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41C190EE1CD5F73A00A9A535 /* VANPERSIE.jpg */; };
+		41C190F11CD5F86600A9A535 /* XAVI.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41C190F01CD5F86600A9A535 /* XAVI.jpg */; };
 		41C8FCF21CD279610057F6DE /* restart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCF01CD279610057F6DE /* restart@2x.png */; };
 		41C8FCF31CD279610057F6DE /* restart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCF11CD279610057F6DE /* restart@3x.png */; };
 		41DE8C821CCD1D52000FE789 /* LabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DE8C811CCD1D52000FE789 /* LabelViewController.m */; };
@@ -26,8 +28,6 @@
 		41EAC3DB1CD191C6005EE872 /* ALONSO.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41EAC3DA1CD191C6005EE872 /* ALONSO.jpg */; };
 		41FBDCBA1A6C1BDA00588B51 /* share1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FBDCB91A6C1BDA00588B51 /* share1.png */; };
 		41FBDCBE1A6C26C900588B51 /* share2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FBDCBD1A6C26C900588B51 /* share2@2x.png */; };
-		41FCC61E1CD1223100E13076 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41FCC5FD1CD1223100E13076 /* 5.jpg */; };
-		41FCC6241CD1223100E13076 /* 23.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41FCC6031CD1223100E13076 /* 23.jpg */; };
 		41FCC6261CD1223100E13076 /* BALE.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41FCC6051CD1223100E13076 /* BALE.jpg */; };
 		41FCC6271CD1223100E13076 /* BECKHAM.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41FCC6061CD1223100E13076 /* BECKHAM.jpg */; };
 		41FCC6281CD1223100E13076 /* COSTA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41FCC6071CD1223100E13076 /* COSTA.jpg */; };
@@ -49,9 +49,7 @@
 		41FCC6381CD1223100E13076 /* ROONEY.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41FCC6171CD1223100E13076 /* ROONEY.jpg */; };
 		41FCC6391CD1223100E13076 /* SAUREZ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41FCC6181CD1223100E13076 /* SAUREZ.jpg */; };
 		41FCC63A1CD1223100E13076 /* SILVA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41FCC6191CD1223100E13076 /* SILVA.jpg */; };
-		41FCC63B1CD1223100E13076 /* VANPARSI.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41FCC61A1CD1223100E13076 /* VANPARSI.jpg */; };
 		41FCC63C1CD1223100E13076 /* VILLA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41FCC61B1CD1223100E13076 /* VILLA.jpg */; };
-		41FCC63D1CD1223100E13076 /* XAZI.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41FCC61C1CD1223100E13076 /* XAZI.jpg */; };
 		41FCC6401CD1258D00E13076 /* Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41FCC63F1CD1258D00E13076 /* Test.plist */; };
 		5361BB851CD5206300CE05C2 /* music_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 5361BB821CD5206300CE05C2 /* music_on.png */; };
 		5361BB861CD5206300CE05C2 /* music_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5361BB831CD5206300CE05C2 /* music_on@2x.png */; };
@@ -120,6 +118,8 @@
 		41769D021CD50D50009B1EF0 /* CustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLabel.h; sourceTree = "<group>"; };
 		41769D031CD50D50009B1EF0 /* CustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLabel.m; sourceTree = "<group>"; };
 		41C190EC1CD5F10F00A9A535 /* Apple Chancery.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apple Chancery.ttf"; sourceTree = "<group>"; };
+		41C190EE1CD5F73A00A9A535 /* VANPERSIE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = VANPERSIE.jpg; sourceTree = "<group>"; };
+		41C190F01CD5F86600A9A535 /* XAVI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = XAVI.jpg; sourceTree = "<group>"; };
 		41C8FCF01CD279610057F6DE /* restart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restart@2x.png"; sourceTree = "<group>"; };
 		41C8FCF11CD279610057F6DE /* restart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restart@3x.png"; sourceTree = "<group>"; };
 		41DE8C801CCD1D52000FE789 /* LabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelViewController.h; sourceTree = "<group>"; };
@@ -135,8 +135,6 @@
 		41EAC3DA1CD191C6005EE872 /* ALONSO.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ALONSO.jpg; sourceTree = "<group>"; };
 		41FBDCB91A6C1BDA00588B51 /* share1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share1.png; sourceTree = "<group>"; };
 		41FBDCBD1A6C26C900588B51 /* share2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share2@2x.png"; sourceTree = "<group>"; };
-		41FCC5FD1CD1223100E13076 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
-		41FCC6031CD1223100E13076 /* 23.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 23.jpg; sourceTree = "<group>"; };
 		41FCC6051CD1223100E13076 /* BALE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BALE.jpg; sourceTree = "<group>"; };
 		41FCC6061CD1223100E13076 /* BECKHAM.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BECKHAM.jpg; sourceTree = "<group>"; };
 		41FCC6071CD1223100E13076 /* COSTA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = COSTA.jpg; sourceTree = "<group>"; };
@@ -158,9 +156,7 @@
 		41FCC6171CD1223100E13076 /* ROONEY.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ROONEY.jpg; sourceTree = "<group>"; };
 		41FCC6181CD1223100E13076 /* SAUREZ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SAUREZ.jpg; sourceTree = "<group>"; };
 		41FCC6191CD1223100E13076 /* SILVA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SILVA.jpg; sourceTree = "<group>"; };
-		41FCC61A1CD1223100E13076 /* VANPARSI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = VANPARSI.jpg; sourceTree = "<group>"; };
 		41FCC61B1CD1223100E13076 /* VILLA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = VILLA.jpg; sourceTree = "<group>"; };
-		41FCC61C1CD1223100E13076 /* XAZI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = XAZI.jpg; sourceTree = "<group>"; };
 		41FCC63F1CD1258D00E13076 /* Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Test.plist; sourceTree = "<group>"; };
 		5361BB821CD5206300CE05C2 /* music_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music_on.png; sourceTree = "<group>"; };
 		5361BB831CD5206300CE05C2 /* music_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music_on@2x.png"; sourceTree = "<group>"; };
@@ -258,7 +254,7 @@
 			children = (
 				538F59041CD5D0FA0067A6F0 /* MARADONA.jpg */,
 				538F59051CD5D0FA0067A6F0 /* PELE.jpg */,
-				41FCC5FD1CD1223100E13076 /* 5.jpg */,
+				41C190EE1CD5F73A00A9A535 /* VANPERSIE.jpg */,
 				41EAC3DA1CD191C6005EE872 /* ALONSO.jpg */,
 				41EAC3CE1CD19169005EE872 /* CASILLAS.jpg */,
 				41EAC3CF1CD19169005EE872 /* DEGEA.jpg */,
@@ -266,7 +262,6 @@
 				41EAC3D11CD19169005EE872 /* KHEDIRA.jpg */,
 				41EAC3D21CD19169005EE872 /* SNEIJDER.jpg */,
 				41EAC3D31CD19169005EE872 /* ZIDANE.jpg */,
-				41FCC6031CD1223100E13076 /* 23.jpg */,
 				41FCC6051CD1223100E13076 /* BALE.jpg */,
 				41FCC6061CD1223100E13076 /* BECKHAM.jpg */,
 				41FCC6071CD1223100E13076 /* COSTA.jpg */,
@@ -288,9 +283,8 @@
 				41FCC6171CD1223100E13076 /* ROONEY.jpg */,
 				41FCC6181CD1223100E13076 /* SAUREZ.jpg */,
 				41FCC6191CD1223100E13076 /* SILVA.jpg */,
-				41FCC61A1CD1223100E13076 /* VANPARSI.jpg */,
 				41FCC61B1CD1223100E13076 /* VILLA.jpg */,
-				41FCC61C1CD1223100E13076 /* XAZI.jpg */,
+				41C190F01CD5F86600A9A535 /* XAVI.jpg */,
 			);
 			name = Celbrity;
 			sourceTree = "<group>";
@@ -522,12 +516,10 @@
 				41FCC62A1CD1223100E13076 /* HAZARD.jpg in Resources */,
 				41FCC6331CD1223100E13076 /* PIRLO.jpg in Resources */,
 				5361BBC91CD5314400CE05C2 /* reset@3x.png in Resources */,
-				41FCC6241CD1223100E13076 /* 23.jpg in Resources */,
 				41FCC6351CD1223100E13076 /* ROBEN.jpg in Resources */,
 				41C190ED1CD5F17A00A9A535 /* Apple Chancery.ttf in Resources */,
 				5361BBB81CD52F7A00CE05C2 /* lock.png in Resources */,
 				5361BBAA1CD5268400CE05C2 /* info@2x.png in Resources */,
-				41FCC61E1CD1223100E13076 /* 5.jpg in Resources */,
 				41EAC3D91CD19169005EE872 /* ZIDANE.jpg in Resources */,
 				41FCC6361CD1223100E13076 /* RONALDINHO.jpg in Resources */,
 				5361BB9D1CD5238800CE05C2 /* sound_off.png in Resources */,
@@ -555,7 +547,7 @@
 				41FCC62B1CD1223100E13076 /* IBRA.jpg in Resources */,
 				41EAC3D51CD19169005EE872 /* DEGEA.jpg in Resources */,
 				7E3DE34D1A5072290034B85A /* Main.storyboard in Resources */,
-				41FCC63B1CD1223100E13076 /* VANPARSI.jpg in Resources */,
+				41C190F11CD5F86600A9A535 /* XAVI.jpg in Resources */,
 				4110C0341CD5BEF3005C5B47 /* close@3x.png in Resources */,
 				5361BB871CD5206300CE05C2 /* music_on@3x.png in Resources */,
 				5361BBAF1CD52B4A00CE05C2 /* back.png in Resources */,
@@ -574,8 +566,8 @@
 				5361BBA41CD5251200CE05C2 /* sound_on@2x.png in Resources */,
 				41EAC3DB1CD191C6005EE872 /* ALONSO.jpg in Resources */,
 				7E5293981A681F8100433133 /* Celebrity.plist in Resources */,
-				41FCC63D1CD1223100E13076 /* XAZI.jpg in Resources */,
 				41C8FCF21CD279610057F6DE /* restart@2x.png in Resources */,
+				41C190EF1CD5F73A00A9A535 /* VANPERSIE.jpg in Resources */,
 				5361BB9F1CD5238800CE05C2 /* sound_off@3x.png in Resources */,
 				7E55830C1A56F1730091D011 /* rolando.jpeg in Resources */,
 				5361BBBB1CD52F7A00CE05C2 /* unlock.png in Resources */,
