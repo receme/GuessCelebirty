@@ -37,9 +37,10 @@
 - (void)changeBackgroundMusicBtnTitle{
   if ([[NSUserDefaults standardUserDefaults]boolForKey:k_Background_Sound]) {
     
-    [self.backGroundMusicBtn setTitle:@"Background Music Off" forState:UIControlStateNormal];
+//    [self.backGroundMusicBtn setTitle:@"Background Music Off" forState:UIControlStateNormal];
+      [self.backGroundMusicBtn setImage:[UIImage imageNamed:@"music_on"] forState:UIControlStateNormal];
   }else{
-    [self.backGroundMusicBtn setTitle:@"Background Music On" forState:UIControlStateNormal];
+    [self.backGroundMusicBtn setImage:[UIImage imageNamed:@"music_off"] forState:UIControlStateNormal];
   }
   
 }
@@ -97,10 +98,12 @@
   
   if ([[NSUserDefaults standardUserDefaults]boolForKey:k_Reveal_Sound]) {
     [[NSUserDefaults standardUserDefaults]setBool:NO forKey:k_Reveal_Sound];
-    [self.reavealBtn setTitle:@"Reveal Sound On" forState:UIControlStateNormal];
+//    [self.reavealBtn setTitle:@"Reveal Sound On" forState:UIControlStateNormal];
+      [self.reavealBtn setImage:[UIImage imageNamed:@"sound_off"] forState:UIControlStateNormal];
   }else{
     [[NSUserDefaults standardUserDefaults]setBool:YES forKey:k_Reveal_Sound];
-    [self.reavealBtn setTitle:@"Reveal Sound Off" forState:UIControlStateNormal];
+//    [self.reavealBtn setTitle:@"Reveal Sound Off" forState:UIControlStateNormal];
+      [self.reavealBtn setImage:[UIImage imageNamed:@"sound_on"] forState:UIControlStateNormal];
   }
   
 }
