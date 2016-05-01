@@ -46,9 +46,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hkS-uo-gjf">
                                 <rect key="frame" x="62" y="311" width="250" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.47843137254901963" green="0.10588235294117647" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Apple-Chancery" family="Apple Chancery" pointSize="23"/>
-                                <state key="normal" title="Play">
+
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Apple-Chancery" family="Apple Chancery" pointSize="27"/>
+                                <state key="normal" backgroundImage="play_btn.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -143,7 +144,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <mutableString key="text">This is a simple puzzle game where you have to guess the player names by seeing their faces.
 
-Tap to reveal cards above the pictures.  Your chance to reveal is limited according to level difficulty.
+Tap to reveal cards above the pictures.
+
+Your chance to reveal is limited according to level difficulty.
 
 You have to finish previous level first to unlock the next level.
 
@@ -344,6 +347,7 @@ Try to guess player with their common names. For example: In case of Cristiano R
         <image name="back.png" width="25" height="25"/>
         <image name="info.png" width="40" height="40"/>
         <image name="music_on.png" width="40" height="40"/>
+        <image name="play_btn.png" width="250" height="48"/>
         <image name="reset.png" width="40" height="40"/>
         <image name="sound_on.png" width="40" height="40"/>
     </resources>

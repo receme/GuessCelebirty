@@ -15,6 +15,8 @@
 		41C190ED1CD5F17A00A9A535 /* Apple Chancery.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41C190EC1CD5F10F00A9A535 /* Apple Chancery.ttf */; };
 		41C190EF1CD5F73A00A9A535 /* VANPERSIE.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41C190EE1CD5F73A00A9A535 /* VANPERSIE.jpg */; };
 		41C190F11CD5F86600A9A535 /* XAVI.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41C190F01CD5F86600A9A535 /* XAVI.jpg */; };
+		41C190F41CD6076A00A9A535 /* play_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C190F21CD6076A00A9A535 /* play_btn@2x.png */; };
+		41C190F51CD6076A00A9A535 /* play_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C190F31CD6076A00A9A535 /* play_btn@3x.png */; };
 		41C8FCF21CD279610057F6DE /* restart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCF01CD279610057F6DE /* restart@2x.png */; };
 		41C8FCF31CD279610057F6DE /* restart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C8FCF11CD279610057F6DE /* restart@3x.png */; };
 		41DE8C821CCD1D52000FE789 /* LabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DE8C811CCD1D52000FE789 /* LabelViewController.m */; };
@@ -120,6 +122,8 @@
 		41C190EC1CD5F10F00A9A535 /* Apple Chancery.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apple Chancery.ttf"; sourceTree = "<group>"; };
 		41C190EE1CD5F73A00A9A535 /* VANPERSIE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = VANPERSIE.jpg; sourceTree = "<group>"; };
 		41C190F01CD5F86600A9A535 /* XAVI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = XAVI.jpg; sourceTree = "<group>"; };
+		41C190F21CD6076A00A9A535 /* play_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_btn@2x.png"; sourceTree = "<group>"; };
+		41C190F31CD6076A00A9A535 /* play_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_btn@3x.png"; sourceTree = "<group>"; };
 		41C8FCF01CD279610057F6DE /* restart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restart@2x.png"; sourceTree = "<group>"; };
 		41C8FCF11CD279610057F6DE /* restart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restart@3x.png"; sourceTree = "<group>"; };
 		41DE8C801CCD1D52000FE789 /* LabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelViewController.h; sourceTree = "<group>"; };
@@ -188,7 +192,7 @@
 		538F59041CD5D0FA0067A6F0 /* MARADONA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MARADONA.jpg; sourceTree = "<group>"; };
 		538F59051CD5D0FA0067A6F0 /* PELE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PELE.jpg; sourceTree = "<group>"; };
 		53A957831CC805D90013EE51 /* background_music2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = background_music2.wav; sourceTree = "<group>"; };
-		7E3DE33E1A5072290034B85A /* GuessThePlayers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessThePlayers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E3DE33E1A5072290034B85A /* Guess The Players.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess The Players.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3DE3421A5072290034B85A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E3DE3431A5072290034B85A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7E3DE3451A5072290034B85A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -198,7 +202,7 @@
 		7E3DE34C1A5072290034B85A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E3DE34E1A5072290034B85A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7E3DE3511A5072290034B85A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		7E3DE3571A5072290034B85A /* GuessThePlayers.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuessThePlayers.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E3DE3571A5072290034B85A /* Guess The Players.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Guess The Players.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3DE35C1A5072290034B85A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E3DE35D1A5072290034B85A /* GuessCelebrityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuessCelebrityTests.m; sourceTree = "<group>"; };
 		7E3DE3671A5073360034B85A /* ImageGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageGrid.h; sourceTree = "<group>"; };
@@ -305,8 +309,8 @@
 		7E3DE33F1A5072290034B85A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7E3DE33E1A5072290034B85A /* GuessThePlayers.app */,
-				7E3DE3571A5072290034B85A /* GuessThePlayers.xctest */,
+				7E3DE33E1A5072290034B85A /* Guess The Players.app */,
+				7E3DE3571A5072290034B85A /* Guess The Players.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -376,6 +380,8 @@
 				5361BBB21CD52F7A00CE05C2 /* lock.png */,
 				5361BBB31CD52F7A00CE05C2 /* lock@2x.png */,
 				5361BBB41CD52F7A00CE05C2 /* lock@3x.png */,
+				41C190F21CD6076A00A9A535 /* play_btn@2x.png */,
+				41C190F31CD6076A00A9A535 /* play_btn@3x.png */,
 				5361BBB51CD52F7A00CE05C2 /* unlock.png */,
 				5361BBB61CD52F7A00CE05C2 /* unlock@2x.png */,
 				5361BBB71CD52F7A00CE05C2 /* unlock@3x.png */,
@@ -426,9 +432,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7E3DE33D1A5072290034B85A /* GuessThePlayers */ = {
+		7E3DE33D1A5072290034B85A /* Guess The Players */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7E3DE3611A5072290034B85A /* Build configuration list for PBXNativeTarget "GuessThePlayers" */;
+			buildConfigurationList = 7E3DE3611A5072290034B85A /* Build configuration list for PBXNativeTarget "Guess The Players" */;
 			buildPhases = (
 				7E3DE33A1A5072290034B85A /* Sources */,
 				7E3DE33B1A5072290034B85A /* Frameworks */,
@@ -438,14 +444,14 @@
 			);
 			dependencies = (
 			);
-			name = GuessThePlayers;
+			name = "Guess The Players";
 			productName = GuessCelebrity;
-			productReference = 7E3DE33E1A5072290034B85A /* GuessThePlayers.app */;
+			productReference = 7E3DE33E1A5072290034B85A /* Guess The Players.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7E3DE3561A5072290034B85A /* GuessThePlayersTests */ = {
+		7E3DE3561A5072290034B85A /* Guess The PlayersTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7E3DE3641A5072290034B85A /* Build configuration list for PBXNativeTarget "GuessThePlayersTests" */;
+			buildConfigurationList = 7E3DE3641A5072290034B85A /* Build configuration list for PBXNativeTarget "Guess The PlayersTests" */;
 			buildPhases = (
 				7E3DE3531A5072290034B85A /* Sources */,
 				7E3DE3541A5072290034B85A /* Frameworks */,
@@ -456,9 +462,9 @@
 			dependencies = (
 				7E3DE3591A5072290034B85A /* PBXTargetDependency */,
 			);
-			name = GuessThePlayersTests;
+			name = "Guess The PlayersTests";
 			productName = GuessCelebrityTests;
-			productReference = 7E3DE3571A5072290034B85A /* GuessThePlayers.xctest */;
+			productReference = 7E3DE3571A5072290034B85A /* Guess The Players.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -480,7 +486,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7E3DE3391A5072290034B85A /* Build configuration list for PBXProject "GuessThePlayers" */;
+			buildConfigurationList = 7E3DE3391A5072290034B85A /* Build configuration list for PBXProject "Guess The Players" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -493,8 +499,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7E3DE33D1A5072290034B85A /* GuessThePlayers */,
-				7E3DE3561A5072290034B85A /* GuessThePlayersTests */,
+				7E3DE33D1A5072290034B85A /* Guess The Players */,
+				7E3DE3561A5072290034B85A /* Guess The PlayersTests */,
 			);
 		};
 /* End PBXProject section */
@@ -519,6 +525,7 @@
 				41FCC6351CD1223100E13076 /* ROBEN.jpg in Resources */,
 				41C190ED1CD5F17A00A9A535 /* Apple Chancery.ttf in Resources */,
 				5361BBB81CD52F7A00CE05C2 /* lock.png in Resources */,
+				41C190F41CD6076A00A9A535 /* play_btn@2x.png in Resources */,
 				5361BBAA1CD5268400CE05C2 /* info@2x.png in Resources */,
 				41EAC3D91CD19169005EE872 /* ZIDANE.jpg in Resources */,
 				41FCC6361CD1223100E13076 /* RONALDINHO.jpg in Resources */,
@@ -553,6 +560,7 @@
 				5361BBAF1CD52B4A00CE05C2 /* back.png in Resources */,
 				41FCC62E1CD1223100E13076 /* MESSI.jpg in Resources */,
 				5361BBA51CD5251200CE05C2 /* sound_on@3x.png in Resources */,
+				41C190F51CD6076A00A9A535 /* play_btn@3x.png in Resources */,
 				5361BBBD1CD52F7A00CE05C2 /* unlock@3x.png in Resources */,
 				5361BB8B1CD520B700CE05C2 /* music_off.png in Resources */,
 				41FCC6291CD1223100E13076 /* GIGGS.jpg in Resources */,
@@ -623,7 +631,7 @@
 /* Begin PBXTargetDependency section */
 		7E3DE3591A5072290034B85A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7E3DE33D1A5072290034B85A /* GuessThePlayers */;
+			target = 7E3DE33D1A5072290034B85A /* Guess The Players */;
 			targetProxy = 7E3DE3581A5072290034B85A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -737,7 +745,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.supertuperapps.guesstheplayers;
-				PRODUCT_NAME = GuessThePlayers;
+				PRODUCT_NAME = "Guess The Players";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -754,7 +762,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.supertuperapps.guesstheplayers;
-				PRODUCT_NAME = GuessThePlayers;
+				PRODUCT_NAME = "Guess The Players";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -774,8 +782,8 @@
 				);
 				INFOPLIST_FILE = GuessCelebrityTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = GuessThePlayers;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuessThePlayers.app/GuessThePlayers";
+				PRODUCT_NAME = "Guess The Players";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guess The Players.app/Guess The Players";
 			};
 			name = Debug;
 		};
@@ -789,15 +797,15 @@
 				);
 				INFOPLIST_FILE = GuessCelebrityTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = GuessThePlayers;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuessThePlayers.app/GuessThePlayers";
+				PRODUCT_NAME = "Guess The Players";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guess The Players.app/Guess The Players";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7E3DE3391A5072290034B85A /* Build configuration list for PBXProject "GuessThePlayers" */ = {
+		7E3DE3391A5072290034B85A /* Build configuration list for PBXProject "Guess The Players" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7E3DE35F1A5072290034B85A /* Debug */,
@@ -806,7 +814,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7E3DE3611A5072290034B85A /* Build configuration list for PBXNativeTarget "GuessThePlayers" */ = {
+		7E3DE3611A5072290034B85A /* Build configuration list for PBXNativeTarget "Guess The Players" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7E3DE3621A5072290034B85A /* Debug */,
@@ -815,7 +823,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7E3DE3641A5072290034B85A /* Build configuration list for PBXNativeTarget "GuessThePlayersTests" */ = {
+		7E3DE3641A5072290034B85A /* Build configuration list for PBXNativeTarget "Guess The PlayersTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7E3DE3651A5072290034B85A /* Debug */,
