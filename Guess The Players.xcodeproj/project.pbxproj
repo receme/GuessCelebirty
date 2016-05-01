@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4110C02E1CD5B473005C5B47 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4110C02D1CD5B473005C5B47 /* iAd.framework */; };
-		4110C0301CD5BC0B005C5B47 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4110C02F1CD5BC0B005C5B47 /* AdSupport.framework */; };
 		4110C0331CD5BEF3005C5B47 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4110C0311CD5BEF3005C5B47 /* close@2x.png */; };
 		4110C0341CD5BEF3005C5B47 /* close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4110C0321CD5BEF3005C5B47 /* close@3x.png */; };
 		41769D041CD50D50009B1EF0 /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41769D031CD50D50009B1EF0 /* CustomLabel.m */; };
@@ -114,7 +113,6 @@
 
 /* Begin PBXFileReference section */
 		4110C02D1CD5B473005C5B47 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		4110C02F1CD5BC0B005C5B47 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		4110C0311CD5BEF3005C5B47 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		4110C0321CD5BEF3005C5B47 /* close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@3x.png"; sourceTree = "<group>"; };
 		41769D021CD50D50009B1EF0 /* CustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLabel.h; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4110C0301CD5BC0B005C5B47 /* AdSupport.framework in Frameworks */,
 				4110C02E1CD5B473005C5B47 /* iAd.framework in Frameworks */,
 				7E5583141A5702D40091D011 /* AVFoundation.framework in Frameworks */,
 				7E5583121A57023B0091D011 /* AudioToolbox.framework in Frameworks */,
@@ -296,7 +293,6 @@
 		7E3DE3351A5072290034B85A = {
 			isa = PBXGroup;
 			children = (
-				4110C02F1CD5BC0B005C5B47 /* AdSupport.framework */,
 				4110C02D1CD5B473005C5B47 /* iAd.framework */,
 				7E5583131A5702D40091D011 /* AVFoundation.framework */,
 				7E5583111A57023B0091D011 /* AudioToolbox.framework */,
