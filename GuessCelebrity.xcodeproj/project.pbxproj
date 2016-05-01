@@ -79,6 +79,8 @@
 		5361BBC71CD5314400CE05C2 /* reset.png in Resources */ = {isa = PBXBuildFile; fileRef = 5361BBC41CD5314400CE05C2 /* reset.png */; };
 		5361BBC81CD5314400CE05C2 /* reset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5361BBC51CD5314400CE05C2 /* reset@2x.png */; };
 		5361BBC91CD5314400CE05C2 /* reset@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5361BBC61CD5314400CE05C2 /* reset@3x.png */; };
+		538F59061CD5D0FA0067A6F0 /* MARADONA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 538F59041CD5D0FA0067A6F0 /* MARADONA.jpg */; };
+		538F59071CD5D0FA0067A6F0 /* PELE.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 538F59051CD5D0FA0067A6F0 /* PELE.jpg */; };
 		53A957841CC805D90013EE51 /* background_music2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 53A957831CC805D90013EE51 /* background_music2.wav */; };
 		7E3DE3441A5072290034B85A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3DE3431A5072290034B85A /* main.m */; };
 		7E3DE3471A5072290034B85A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3DE3461A5072290034B85A /* AppDelegate.m */; };
@@ -185,6 +187,8 @@
 		5361BBC41CD5314400CE05C2 /* reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reset.png; sourceTree = "<group>"; };
 		5361BBC51CD5314400CE05C2 /* reset@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reset@2x.png"; sourceTree = "<group>"; };
 		5361BBC61CD5314400CE05C2 /* reset@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reset@3x.png"; sourceTree = "<group>"; };
+		538F59041CD5D0FA0067A6F0 /* MARADONA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MARADONA.jpg; sourceTree = "<group>"; };
+		538F59051CD5D0FA0067A6F0 /* PELE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PELE.jpg; sourceTree = "<group>"; };
 		53A957831CC805D90013EE51 /* background_music2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = background_music2.wav; sourceTree = "<group>"; };
 		7E3DE33E1A5072290034B85A /* GuessCelebrity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessCelebrity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3DE3421A5072290034B85A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -250,6 +254,8 @@
 		41FCC5FC1CD121FF00E13076 /* Celbrity */ = {
 			isa = PBXGroup;
 			children = (
+				538F59041CD5D0FA0067A6F0 /* MARADONA.jpg */,
+				538F59051CD5D0FA0067A6F0 /* PELE.jpg */,
 				41FCC5FD1CD1223100E13076 /* 5.jpg */,
 				41EAC3DA1CD191C6005EE872 /* ALONSO.jpg */,
 				41EAC3CE1CD19169005EE872 /* CASILLAS.jpg */,
@@ -559,6 +565,7 @@
 				5361BB8C1CD520B700CE05C2 /* music_off@2x.png in Resources */,
 				41FCC6301CD1223100E13076 /* NUER.jpg in Resources */,
 				41FCC6381CD1223100E13076 /* ROONEY.jpg in Resources */,
+				538F59061CD5D0FA0067A6F0 /* MARADONA.jpg in Resources */,
 				7E3DE3521A5072290034B85A /* LaunchScreen.xib in Resources */,
 				5361BBA41CD5251200CE05C2 /* sound_on@2x.png in Resources */,
 				41EAC3DB1CD191C6005EE872 /* ALONSO.jpg in Resources */,
@@ -568,6 +575,7 @@
 				5361BB9F1CD5238800CE05C2 /* sound_off@3x.png in Resources */,
 				7E55830C1A56F1730091D011 /* rolando.jpeg in Resources */,
 				5361BBBB1CD52F7A00CE05C2 /* unlock.png in Resources */,
+				538F59071CD5D0FA0067A6F0 /* PELE.jpg in Resources */,
 				5361BBB01CD52B4A00CE05C2 /* back@2x.png in Resources */,
 				5361BBBC1CD52F7A00CE05C2 /* unlock@2x.png in Resources */,
 				5361BB851CD5206300CE05C2 /* music_on.png in Resources */,
