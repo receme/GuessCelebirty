@@ -34,7 +34,7 @@
   
   self.guessCelebrityLabel.text = kName;
   
-  [self makeBtnRound];
+ // [self makeBtnRound];
   [self changeBackgroundMusicBtnTitle];
   //[self showFullScreenAd];
 }
