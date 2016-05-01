@@ -57,7 +57,7 @@
   
   CGFloat kSize = (kScreenWidth - (4*k_space))/3;
   
-  for (int i = 0; i< 10; i++) {
+  for (int i = 0; i< 11; i++) {
     for (int j = 0; j< 3; j++) {
       CGFloat xPos = ((j+1)*k_space) + (j*kSize);
       CGFloat yPos =  ((i+1)*k_space) + (i*kSize);
@@ -73,7 +73,7 @@
     }
   }
   
-  [self.scroller setContentSize:CGSizeMake((3*kSize)+(4*k_space), (10*kSize)+(11*k_space))];
+  [self.scroller setContentSize:CGSizeMake((3*kSize)+(4*k_space), (11*kSize)+(12*k_space))];
   
 }
 

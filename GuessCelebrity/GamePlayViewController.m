@@ -407,7 +407,9 @@ typedef void (^Handler)(BOOL isCompleted);
   if (index == self.celebrityName.length-1) {
     [self analysisResultWithCompletion:^(BOOL isCompleted) {
       if (isCompleted) {
-        [self showFullScreenAd];
+        if (sharedController.getCurrentLabel % 3 == 0) {
+          [self showFullScreenAd];
+        }
         [self handleWin];
       }else{
         dispatch_async(dispatch_get_main_queue(), ^{
