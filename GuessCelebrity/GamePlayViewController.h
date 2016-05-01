@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @protocol GamePlayDelegate <NSObject>
 
 @optional
@@ -16,6 +15,8 @@
 @end
 
 @interface GamePlayViewController : UIViewController
+
 @property (weak) id<GamePlayDelegate> delegate;
+
 @end
 

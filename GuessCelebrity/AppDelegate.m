@@ -22,6 +22,12 @@
   
     [[UIApplication sharedApplication]setStatusBarHidden:YES];
   
+  if (![[NSUserDefaults standardUserDefaults]boolForKey:@"FRIST_TIME"]) {
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:k_Background_Sound];
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:k_Reveal_Sound];
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"FRIST_TIME"];
+  }
+  
     
     return YES;
 }

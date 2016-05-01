@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="CmF-wF-X9v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="CmF-wF-X9v">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -52,7 +52,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eQ7-kN-Y19">
                                 <rect key="frame" x="167" y="456" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="music_on.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -61,8 +61,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ow0-ui-rVd">
-                                <rect key="frame" x="167" y="506" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="243" y="456" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="sound_on.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -71,8 +71,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zVX-hw-mzi">
-                                <rect key="frame" x="118" y="555" width="139" height="40"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="88" y="456" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="info.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -151,7 +151,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gqM-3L-Oa5">
-                                <rect key="frame" x="167" y="590" width="40" height="40"/>
+                                <rect key="frame" x="167" y="590.00000005655625" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="reset.png">
@@ -262,6 +262,7 @@
                         <outlet property="continueBtn" destination="Ceg-jn-g8E" id="MeX-cE-MbP"/>
                         <outlet property="earnedCoinLabel" destination="Uc9-ES-mOE" id="bok-HB-zqW"/>
                         <outlet property="intialReveals" destination="2kx-Wh-3q1" id="7p3-KN-F6n"/>
+                        <outlet property="resetBtn" destination="gqM-3L-Oa5" id="QnB-fP-Obc"/>
                         <outlet property="revealLabel" destination="cVZ-kw-RY5" id="Myi-Mk-6yN"/>
                         <outlet property="titleLabel" destination="vbJ-iB-rem" id="xsT-ni-2gW"/>
                         <outlet property="usedReveals" destination="2OL-Vl-z0o" id="HF5-AR-tOz"/>
@@ -321,10 +322,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back.png" width="42" height="42"/>
+        <image name="back.png" width="25" height="25"/>
         <image name="info.png" width="40" height="40"/>
         <image name="music_on.png" width="40" height="40"/>
-        <image name="reset.png" width="40" height="42"/>
+        <image name="reset.png" width="40" height="40"/>
         <image name="sound_on.png" width="40" height="40"/>
     </resources>
 </document>

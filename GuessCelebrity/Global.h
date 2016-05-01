@@ -20,7 +20,7 @@
 
 #define kSpace 5
 #define kXpos ((kScreenWidth-((5*kGridSize)+(4*kSpace)))/2)+(kGridSize/2)
-#define kYpos 375
+#define kYpos 365
 #define sharedController [GameController sharedController]
 
 #define appdelegate (AppDelegate*)[[UIApplication sharedApplication]delegate]

@@ -11,12 +11,14 @@
 #import "PrepareString.h"
 #import "GameController.h"
 #import "Global.h"
+#import "iAd/ADInterstitialAd.h"
+
 
 #define k_CharSet @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 typedef void (^Handler)(BOOL isCompleted);
 
-@interface GamePlayViewController ()<ImageGridDelegate>
+@interface GamePlayViewController ()<ImageGridDelegate,ADInterstitialAdDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) ImageGrid *imageGrid;
 @property (nonatomic, strong) NSMutableArray *selectedCharBtnAry; // tap sequence array
@@ -34,6 +36,7 @@ typedef void (^Handler)(BOOL isCompleted);
 
 @property (nonatomic, strong) UIScrollView *scoller;
 
+@property (weak, nonatomic) IBOutlet UIButton *resetBtn;
 
 // view after completion a level
 @property (weak, nonatomic) IBOutlet UIView *viewAfterCompleteLavel;
@@ -47,7 +50,12 @@ typedef void (^Handler)(BOOL isCompleted);
 @property (weak, nonatomic) IBOutlet UILabel *revealLabel;
 @end
 
-@implementation GamePlayViewController
+@implementation GamePlayViewController{
+  ADInterstitialAd* _interstitial;
+  BOOL _requestingAd;
+  UIView *_adView;
+}
+
 @synthesize delegate;
 
 - (void)viewDidLoad {
@@ -56,6 +64,14 @@ typedef void (^Handler)(BOOL isCompleted);
   self.view.backgroundColor = kBackgroundColor;
   self.viewAfterCompleteLavel.alpha = 0;
   self.viewAfterCompleteLavel.center = CGPointMake(self.view.frame.size.width/2, -self.view.frame.size.height/2);
+  
+  if (kScreenWidth>320) {
+    self.resetBtn.frame = CGRectMake((kScreenWidth-40)/2, kScreenHeight-(40+50), 40, 40);
+  }else{
+    self.resetBtn.frame = CGRectMake((kScreenWidth-40)/2, kScreenHeight-(40+5), 40, 40);
+
+  }
+  
   
   [self playAudio];
   self.imageGrid = [[ImageGrid alloc]initWithFrame:CGRectMake((self.view.frame.size.width-250)/2, 80, 250, 250)];
@@ -391,6 +407,7 @@ typedef void (^Handler)(BOOL isCompleted);
   if (index == self.celebrityName.length-1) {
     [self analysisResultWithCompletion:^(BOOL isCompleted) {
       if (isCompleted) {
+        [self showFullScreenAd];
         [self handleWin];
       }else{
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -561,6 +578,73 @@ typedef void (^Handler)(BOOL isCompleted);
   }
   
 }
+
+#pragma mark Interstitial Ad
+-(void)showFullScreenAd {
+  if (_requestingAd == NO) {
+    _interstitial = [[ADInterstitialAd alloc] init];
+    _interstitial.delegate = self;
+    NSLog(@"Ad Request");
+    _requestingAd = YES;
+  }
+}
+
+-(void)interstitialAd:(ADInterstitialAd *)interstitialAd didFailWithError:(NSError *)error {
+  _requestingAd = NO;
+  NSLog(@"Ad didFailWithERROR");
+  NSLog(@"%@", error);
+}
+
+-(void)interstitialAdDidLoad:(ADInterstitialAd *)interstitialAd {
+  NSLog(@"Ad DidLOAD");
+  NSLog(@"Ad DidLOAD");
+  if (interstitialAd.loaded) {
+    
+    CGRect interstitialFrame = self.view.bounds;
+    interstitialFrame.origin = CGPointMake(0, 0);
+    _adView = [[UIView alloc] initWithFrame:interstitialFrame];
+    [self.view addSubview:_adView];
+    
+    [_interstitial presentInView:_adView];
+    
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button addTarget:self action:@selector(closeAd:) forControlEvents:UIControlEventTouchDown];
+    button.backgroundColor = [UIColor clearColor];
+    [button setBackgroundImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, 30, 30);
+    [_adView addSubview:button];
+    
+    [UIView beginAnimations:@"animateAdBannerOn" context:nil];
+    [UIView setAnimationDuration:1];
+    [_adView setAlpha:1];
+    [UIView commitAnimations];
+    
+  }
+}
+
+-(void)closeAd:(id)sender {
+  [UIView beginAnimations:@"animateAdBannerOff" context:nil];
+  [UIView setAnimationDuration:1];
+  [_adView setAlpha:0];
+  [UIView commitAnimations];
+  
+  _adView=nil;
+  _requestingAd = NO;
+}
+
+
+-(void)interstitialAdDidUnload:(ADInterstitialAd *)interstitialAd {
+  _requestingAd = NO;
+  NSLog(@"Ad DidUNLOAD");
+}
+
+-(void)interstitialAdActionDidFinish:(ADInterstitialAd *)interstitialAd {
+  _requestingAd = NO;
+  NSLog(@"Ad DidFINISH");
+}
+
+
+
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
