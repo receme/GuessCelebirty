@@ -84,9 +84,9 @@ typedef void (^Handler)(BOOL isCompleted);
 -(NSUInteger)totalRevel{
   
   NSUInteger unlock = [sharedController getCurrentLabel];
-  if (unlock > 4) {
+  if (unlock > 20) {
     return 3;
-  }else if (unlock > 2){
+  }else if (unlock > 10){
     return 4;
   }else{
     return 5;
