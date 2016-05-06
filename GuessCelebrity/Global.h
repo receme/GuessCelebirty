@@ -32,3 +32,5 @@
 //#define k_Unlock_Interval 3 // after the period the label become onlock
 
 #define k_Label_Completed @"New_Label_Completed"
+
+#define K_Ad_Unit_ID @"ca-app-pub-3996731798982494/6067299317"

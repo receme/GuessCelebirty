@@ -5,20 +5,23 @@
 //  Created by Muzahid on 12/28/14.
 //  Copyright (c) 2014 Muzahid. All rights reserved.
 //
+
+@import GoogleMobileAds;
+
+
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
 #import "GamePlayViewController.h"
 #import "PrepareString.h"
 #import "GameController.h"
 #import "Global.h"
-#import "iAd/ADInterstitialAd.h"
 
 
 #define k_CharSet @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 typedef void (^Handler)(BOOL isCompleted);
 
-@interface GamePlayViewController ()<ImageGridDelegate,ADInterstitialAdDelegate>
+@interface GamePlayViewController ()<ImageGridDelegate,GADInterstitialDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) ImageGrid *imageGrid;
 @property (nonatomic, strong) NSMutableArray *selectedCharBtnAry; // tap sequence array
@@ -31,11 +34,8 @@ typedef void (^Handler)(BOOL isCompleted);
 @property (assign) BOOL levelCompleted;
 @property (nonatomic, strong) NSMutableArray *resultFrameAry;
 @property (assign) NSUInteger count;
-
 @property (assign) BOOL executing;
-
 @property (nonatomic, strong) UIScrollView *scoller;
-
 @property (weak, nonatomic) IBOutlet UIButton *resetBtn;
 
 // view after completion a level
@@ -46,15 +46,12 @@ typedef void (^Handler)(BOOL isCompleted);
 @property (weak, nonatomic) IBOutlet UILabel *usedReveals;
 @property (weak, nonatomic) IBOutlet UILabel *earnedCoinLabel;
 @property (weak, nonatomic) IBOutlet UIButton *continueBtn;
-
 @property (weak, nonatomic) IBOutlet UILabel *revealLabel;
+@property(nonatomic, strong) GADInterstitial *interstitial;
+
 @end
 
-@implementation GamePlayViewController{
-  ADInterstitialAd* _interstitial;
-  BOOL _requestingAd;
-  UIView *_adView;
-}
+@implementation GamePlayViewController
 
 @synthesize delegate;
 
@@ -90,6 +87,9 @@ typedef void (^Handler)(BOOL isCompleted);
   [self startPlay];
   
   [self viewOrientation];
+  
+  [self adMakeReadyToDisplay];
+
 }
 
 /**
@@ -408,7 +408,7 @@ typedef void (^Handler)(BOOL isCompleted);
     [self analysisResultWithCompletion:^(BOOL isCompleted) {
       if (isCompleted) {
         if (sharedController.getCurrentLabel % 3 == 0) {
-          [self showFullScreenAd];
+          [self showAd];
         }
         [self handleWin];
       }else{
@@ -581,68 +581,65 @@ typedef void (^Handler)(BOOL isCompleted);
   
 }
 
-#pragma mark Interstitial Ad
--(void)showFullScreenAd {
-  if (_requestingAd == NO) {
-    _interstitial = [[ADInterstitialAd alloc] init];
-    _interstitial.delegate = self;
-    NSLog(@"Ad Request");
-    _requestingAd = YES;
+
+#pragma mark:- Interestitial Google AdMob
+
+- (GADInterstitial *)createAndLoadInterstitial {
+  GADInterstitial *interstitial =
+  [[GADInterstitial alloc] initWithAdUnitID:K_Ad_Unit_ID];
+  interstitial.delegate = self;
+  [interstitial loadRequest:[GADRequest request]];
+  return interstitial;
+}
+
+-(GADRequest *)loadRequest{
+  GADRequest *request = [GADRequest request];
+  request.testDevices = @[ kGADSimulatorID ];
+  return  request;
+}
+
+-(void)adMakeReadyToDisplay{
+  self.interstitial = [self createAndLoadInterstitial];
+  [self.interstitial loadRequest:[self loadRequest]];
+}
+
+-(void)showAd{
+  if ([self.interstitial isReady]) {
+    [self.interstitial presentFromRootViewController:self];
+  }else{
+    NSLog(@"ad not ready yet");
   }
 }
 
--(void)interstitialAd:(ADInterstitialAd *)interstitialAd didFailWithError:(NSError *)error {
-  _requestingAd = NO;
-  NSLog(@"Ad didFailWithERROR");
-  NSLog(@"%@", error);
-}
+#pragma mark:- AdInterestitial Delegate
 
--(void)interstitialAdDidLoad:(ADInterstitialAd *)interstitialAd {
-  NSLog(@"Ad DidLOAD");
-  NSLog(@"Ad DidLOAD");
-  if (interstitialAd.loaded) {
-    
-    CGRect interstitialFrame = self.view.bounds;
-    interstitialFrame.origin = CGPointMake(0, 0);
-    _adView = [[UIView alloc] initWithFrame:interstitialFrame];
-    [self.view addSubview:_adView];
-    
-    [_interstitial presentInView:_adView];
-    
-    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button addTarget:self action:@selector(closeAd:) forControlEvents:UIControlEventTouchDown];
-    button.backgroundColor = [UIColor clearColor];
-    [button setBackgroundImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
-    button.frame = CGRectMake(0, 0, 30, 30);
-    [_adView addSubview:button];
-    
-    [UIView beginAnimations:@"animateAdBannerOn" context:nil];
-    [UIView setAnimationDuration:1];
-    [_adView setAlpha:1];
-    [UIView commitAnimations];
-    
-  }
-}
-
--(void)closeAd:(id)sender {
-  [UIView beginAnimations:@"animateAdBannerOff" context:nil];
-  [UIView setAnimationDuration:1];
-  [_adView setAlpha:0];
-  [UIView commitAnimations];
+/// Store from a link on the interstitial).
+- (void)interstitialWillPresentScreen:(GADInterstitial *)ad{
   
-  _adView=nil;
-  _requestingAd = NO;
 }
 
-
--(void)interstitialAdDidUnload:(ADInterstitialAd *)interstitialAd {
-  _requestingAd = NO;
-  NSLog(@"Ad DidUNLOAD");
+/// Called when |ad| fails to present.
+- (void)interstitialDidFailToPresentScreen:(GADInterstitial *)ad{
+  
 }
 
--(void)interstitialAdActionDidFinish:(ADInterstitialAd *)interstitialAd {
-  _requestingAd = NO;
-  NSLog(@"Ad DidFINISH");
+/// Called before the interstitial is to be animated off the screen.
+- (void)interstitialWillDismissScreen:(GADInterstitial *)ad{
+  
+}
+
+/// Called just after dismissing an interstitial and it has animated off the screen.
+- (void)interstitialDidDismissScreen:(GADInterstitial *)ad{
+  [self adMakeReadyToDisplay];
+  
+}
+
+/// Called just before the application will background or terminate because the user clicked on an
+/// ad that will launch another application (such as the App Store). The normal
+/// UIApplicationDelegate methods, like applicationDidEnterBackground:, will be called immediately
+/// before this.
+- (void)interstitialWillLeaveApplication:(GADInterstitial *)ad{
+  
 }
 
 

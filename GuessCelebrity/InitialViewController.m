@@ -6,25 +6,26 @@
 //  Copyright (c) 2015 Muzahid. All rights reserved.
 //
 
+
+
 #import "InitialViewController.h"
 #import "GameController.h"
 #import "Global.h"
 #import "LabelViewController.h"
-#import "iAd/ADInterstitialAd.h"
 
 
 
-@interface InitialViewController ()<ADInterstitialAdDelegate>
+@interface InitialViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property (weak, nonatomic) IBOutlet UILabel *guessCelebrityLabel;
 @property (strong, nonatomic) NSTimer *animationTimer;
 @property (weak, nonatomic) IBOutlet UIButton *backGroundMusicBtn;
 @property (weak, nonatomic) IBOutlet UIButton *reavealBtn;
 
+
 @end
 
 @implementation InitialViewController{
-  ADInterstitialAd* _interstitial;
   BOOL _requestingAd;
   UIView *_adView;
 }
@@ -32,14 +33,24 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  
   self.guessCelebrityLabel.text = kName;
   
- // [self makeBtnRound];
   [self changeBackgroundMusicBtnTitle];
-  //[self showFullScreenAd];
+  
+  
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+  
+  
+  
+  self.animationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(animatedButton:) userInfo:nil repeats:YES];
+  
 }
 
 
+#pragma mark:- Background Music Handle
 
 - (void)changeBackgroundMusicBtnTitle{
   if ([[NSUserDefaults standardUserDefaults]boolForKey:k_Background_Sound]) {
@@ -58,13 +69,8 @@
   
 }
 
--(void)viewDidAppear:(BOOL)animated{
-  
- // [self showFullScreenAd];
-  
-  self.animationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(animatedButton:) userInfo:nil repeats:YES];
-  
-}
+
+
 
 -(void)makeBtnRound{
   
@@ -133,71 +139,6 @@
     }];
   }];
 }
-
-#pragma mark Interstitial Ad
--(void)showFullScreenAd {
-  if (_requestingAd == NO) {
-    _interstitial = [[ADInterstitialAd alloc] init];
-    _interstitial.delegate = self;
-    NSLog(@"Ad Request");
-    _requestingAd = YES;
-  }
-}
-
--(void)interstitialAd:(ADInterstitialAd *)interstitialAd didFailWithError:(NSError *)error {
-  _requestingAd = NO;
-  NSLog(@"Ad didFailWithERROR");
-  NSLog(@"%@", error);
-}
-
--(void)interstitialAdDidLoad:(ADInterstitialAd *)interstitialAd {
-  NSLog(@"Ad DidLOAD");
-  NSLog(@"Ad DidLOAD");
-  if (interstitialAd.loaded) {
-    
-    CGRect interstitialFrame = self.view.bounds;
-    interstitialFrame.origin = CGPointMake(0, 0);
-    _adView = [[UIView alloc] initWithFrame:interstitialFrame];
-    [self.view addSubview:_adView];
-    
-    [_interstitial presentInView:_adView];
-    
-    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button addTarget:self action:@selector(closeAd:) forControlEvents:UIControlEventTouchDown];
-    button.backgroundColor = [UIColor clearColor];
-    [button setBackgroundImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
-    button.frame = CGRectMake(0, 0, 30, 30);
-    [_adView addSubview:button];
-    
-    [UIView beginAnimations:@"animateAdBannerOn" context:nil];
-    [UIView setAnimationDuration:1];
-    [_adView setAlpha:1];
-    [UIView commitAnimations];
-    
-  }
-}
-
--(void)closeAd:(id)sender {
-  [UIView beginAnimations:@"animateAdBannerOff" context:nil];
-  [UIView setAnimationDuration:1];
-  [_adView setAlpha:0];
-  [UIView commitAnimations];
-  
-  _adView=nil;
-  _requestingAd = NO;
-}
-
-
--(void)interstitialAdDidUnload:(ADInterstitialAd *)interstitialAd {
-  _requestingAd = NO;
-  NSLog(@"Ad DidUNLOAD");
-}
-
--(void)interstitialAdActionDidFinish:(ADInterstitialAd *)interstitialAd {
-  _requestingAd = NO;
-  NSLog(@"Ad DidFINISH");
-}
-
 
 
 - (void)didReceiveMemoryWarning {
