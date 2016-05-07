@@ -594,7 +594,8 @@ typedef void (^Handler)(BOOL isCompleted);
 
 -(GADRequest *)loadRequest{
   GADRequest *request = [GADRequest request];
-  request.testDevices = @[ kGADSimulatorID ];
+  //request.testDevices = @[ kGADSimulatorID ];
+//request.testDevices = @[ @"7f7c8742c010793f27862bbbde66c438" ];
   return  request;
 }
 

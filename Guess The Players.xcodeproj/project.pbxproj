@@ -16,7 +16,6 @@
 		41617DB81CDCD4C100CB5129 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41617DB71CDCD4C100CB5129 /* EventKitUI.framework */; };
 		41617DBA1CDCD4E000CB5129 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41617DB91CDCD4E000CB5129 /* MessageUI.framework */; };
 		41617DBC1CDCD4F400CB5129 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41617DBB1CDCD4F400CB5129 /* MediaPlayer.framework */; };
-		41617DBE1CDCD4FE00CB5129 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41617DBD1CDCD4FE00CB5129 /* StoreKit.framework */; };
 		41617DC01CDCD51200CB5129 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41617DBF1CDCD51200CB5129 /* SystemConfiguration.framework */; };
 		41769D041CD50D50009B1EF0 /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41769D031CD50D50009B1EF0 /* CustomLabel.m */; };
 		41C190ED1CD5F17A00A9A535 /* Apple Chancery.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41C190EC1CD5F10F00A9A535 /* Apple Chancery.ttf */; };
@@ -129,7 +128,6 @@
 		41617DB71CDCD4C100CB5129 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		41617DB91CDCD4E000CB5129 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		41617DBB1CDCD4F400CB5129 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		41617DBD1CDCD4FE00CB5129 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		41617DBF1CDCD51200CB5129 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		41769D021CD50D50009B1EF0 /* CustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLabel.h; sourceTree = "<group>"; };
 		41769D031CD50D50009B1EF0 /* CustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLabel.m; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				41617DC01CDCD51200CB5129 /* SystemConfiguration.framework in Frameworks */,
-				41617DBE1CDCD4FE00CB5129 /* StoreKit.framework in Frameworks */,
 				41617DBC1CDCD4F400CB5129 /* MediaPlayer.framework in Frameworks */,
 				41617DBA1CDCD4E000CB5129 /* MessageUI.framework in Frameworks */,
 				41617DB81CDCD4C100CB5129 /* EventKitUI.framework in Frameworks */,
@@ -269,7 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				41617DBF1CDCD51200CB5129 /* SystemConfiguration.framework */,
-				41617DBD1CDCD4FE00CB5129 /* StoreKit.framework */,
 				41617DBB1CDCD4F400CB5129 /* MediaPlayer.framework */,
 				41617DB91CDCD4E000CB5129 /* MessageUI.framework */,
 				41617DB71CDCD4C100CB5129 /* EventKitUI.framework */,
@@ -515,6 +511,11 @@
 					7E3DE33D1A5072290034B85A = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 4JVW9549Y3;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					7E3DE3561A5072290034B85A = {
 						CreatedOnToolsVersion = 6.0;
